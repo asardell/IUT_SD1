@@ -223,6 +223,7 @@ valeurs_uniques <- unique(c(3, 3, 2, 1, 1, 4, 4))
 1. Calculez la moyenne des éléments du vecteur [12, 18, 25, 30] en utilisant la fonction `mean()`.
 <details>
 <summary>Correction</summary>
+
 ```r
 moyenne <- mean(c(12, 18, 25, 30))
 ```
@@ -231,6 +232,7 @@ moyenne <- mean(c(12, 18, 25, 30))
 2. Calculez la médiane du vecteur [5, 10, 15, 20, 25] en utilisant la fonction `median()`.
 <details>
 <summary>Correction</summary>
+
 ```r
 mediane <- median(c(5, 10, 15, 20, 25))
 ```
@@ -239,6 +241,7 @@ mediane <- median(c(5, 10, 15, 20, 25))
 3. Trouvez la valeur minimale du vecteur [8, 15, 7, 21] en utilisant la fonction `min()`.
 <details>
 <summary>Correction</summary>
+
 ```r
 minimum <- min(c(8, 15, 7, 21))
 ```
@@ -247,6 +250,7 @@ minimum <- min(c(8, 15, 7, 21))
 4. Obtenez la valeur maximale du vecteur [3, 9, 14, 12] en utilisant la fonction `max()`.
 <details>
 <summary>Correction</summary>
+
 ```r
 maximum <- max(c(3, 9, 14, 12))
 ```
@@ -257,6 +261,7 @@ maximum <- max(c(3, 9, 14, 12))
 5. Calculez l'écart type des éléments du vecteur [18, 22, 15, 28] en utilisant la fonction `sd()`.
 <details>
 <summary>Correction</summary>
+
 ```r
 ecart_type <- sd(c(18, 22, 15, 28))
 ```
@@ -265,6 +270,7 @@ ecart_type <- sd(c(18, 22, 15, 28))
 6. Calculez la variance du vecteur [7, 14, 21, 28] en utilisant la fonction `var()`.
 <details>
 <summary>Correction</summary>
+
 ```r
 variance <- var(c(7, 14, 21, 28))
 ```
@@ -275,6 +281,7 @@ variance <- var(c(7, 14, 21, 28))
 7. Calculez les quantiles à 10%, 30%, et 60% du vecteur [5, 10, 15, 20, 25] en utilisant la fonction `quantile()`.
 <details>
 <summary>Correction</summary>
+
 ```r
 quantiles <- quantile(c(5, 10, 15, 20, 25), probs = c(0.1, 0.3, 0.6))
 ```
@@ -285,6 +292,7 @@ quantiles <- quantile(c(5, 10, 15, 20, 25), probs = c(0.1, 0.3, 0.6))
 8. Calculez le coefficient de corrélation entre deux vecteurs [2, 4, 6, 8] et [1, 3, 5, 7] en utilisant la fonction `cor()`.
 <details>
 <summary>Correction</summary>
+
 ```r
 correlation <- cor(c(2, 4, 6, 8), c(1, 3, 5, 7))
 ```
@@ -295,6 +303,7 @@ correlation <- cor(c(2, 4, 6, 8), c(1, 3, 5, 7))
 9. Créez un nouveau vecteur en concaténant les vecteurs [1, 2, 3] et [4, 5, 6], puis calculez la moyenne.
 <details>
 <summary>Correction</summary>
+
 ```r
 nouveau_vecteur <- c(1, 2, 3, 4, 5, 6)
 moyenne_combinee <- mean(nouveau_vecteur)
@@ -304,6 +313,7 @@ moyenne_combinee <- mean(nouveau_vecteur)
 10. Générez une séquence de nombres de 5 à 50 avec un incrément de 5, puis trouvez la médiane.
 <details>
 <summary>Correction</summary>
+
 ```r
 sequence <- seq(5, 50, by = 5)
 mediane_combinee <- median(sequence)
@@ -313,6 +323,7 @@ mediane_combinee <- median(sequence)
 11. Répétez les éléments du vecteur [2, 4, 6] trois fois, puis calculez la somme.
 <details>
 <summary>Correction</summary>
+
 ```r
 repetition <- rep(c(2, 4, 6), times = 3)
 somme_combinee <- sum(repetition)
