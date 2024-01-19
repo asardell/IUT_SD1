@@ -287,7 +287,7 @@ quantiles <- quantile(c(5, 10, 15, 20, 25), probs = c(0.1, 0.3, 0.6))
 ```
 </details>
 
-## Fonction `cor()`
+#### `cor()`
 
 8. Calculez le coefficient de corrélation entre deux vecteurs [2, 4, 6, 8] et [1, 3, 5, 7] en utilisant la fonction `cor()`.
 <details>
