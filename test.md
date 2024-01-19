@@ -16,117 +16,9 @@
 | `sum()` | Calcule la somme des éléments d'un vecteur. | | `somme <- sum(vecteur)` |
 
 
-### Questions
+### Exerice sur les Fonctions en R
 
-Consignes :
-Créez et manipulez des vecteurs en utilisant les fonctions de base en R. Utilisez les fonctions `c()`, `length()`, `unique()`, `mean()`, et d'autres fonctions de statistiques univariées.
-
-1. Créez un vecteur nommé 'nombres' contenant les nombres 3, 7, 11, 15, 19.
-
-<details>
-<summary>Correction</summary>
-
-```r 
-nombres <- c(3, 7, 11, 15, 19)
-```
-</details>
-
-2. Créez un vecteur nommé 'lettres' contenant les lettres 'a', 'c', 'e', 'g', 'i'.
-<details>
-<summary>Correction</summary>
-
-```r
-lettres <- c('a', 'c', 'e', 'g', 'i')
-```
-</details>
-
-3. Concaténez les vecteurs 'nombres' et 'lettres' pour créer un vecteur 'mixte'.
-<details>
-<summary>Correction</summary>
-
-```r
-mixte <- c(nombres, lettres)
-```
-</details>
-
-4. Trouvez la longueur du vecteur 'mixte' en utilisant la fonction `length()`.
-<details>
-<summary>Correction</summary>
-
-```r
-longueur_mixte <- length(mixte)
-```
-</details>
-
-5. Créez un vecteur 'pairs' contenant les nombres pairs de 2 à 10.
-<details>
-<summary>Correction</summary>
-
-```r
-pairs <- seq(2, 10, by = 2)
-```
-</details>
-
-6. Créez un vecteur 'replication' contenant la répétition du nombre 5 cinq fois.
-<details>
-<summary>Correction</summary>
-
-```r
-replication <- rep(5, times = 5)
-```
-</details>
-
-7. Créez un vecteur 'sequence' contenant une séquence de 1 à 10 avec un pas de 2.
-<details>
-<summary>Correction</summary>
-
-```r
-sequence <- seq(1, 10, by = 2)
-```
-</details>
-
-8. Trouvez les valeurs uniques dans le vecteur 'sequence' en utilisant la fonction `unique()`.
-<details>
-<summary>Correction</summary>
-
-```r
-valeurs_uniques <- unique(sequence)
-```
-</details>
-
-9.  Calculez la moyenne des éléments du vecteur 'nombres' en utilisant la fonction `mean()`.
-<details>
-<summary>Correction</summary>
-
-```r
-moyenne_nombres <- mean(nombres)
-```
-</details>
-
-
-## Exerice 2 -  Fonctions statistique et simulation
-
-### Mémo
-
-| Nom de Fonction | Description | Argument Pertinent | Exemple |
-|------------------|-------------|--------------------|---------|
-| `mean()` | Calcule la moyenne des éléments d'un vecteur. || `moyenne <- mean(vecteur)` |
-| `median()` | Calcule la médiane d'un vecteur. | | `mediane <- median(vecteur)` |
-| `min()` | Retourne la valeur minimale d'un vecteur. |  | `minimum <- min(vecteur)` |
-| `max()` | Retourne la valeur maximale d'un vecteur. |  | `maximum <- max(vecteur)` |
-| `sd()` | Calcule l'écart type d'un vecteur. |  | `ecart_type <- sd(vecteur)` |
-| `var()` | Calcule la variance d'un vecteur. |  | `variance <- var(vecteur)` |
-| `quantile()` | Calcule les quantiles d'un vecteur. | `x` : le vecteur pour lequel calculer les quantiles. `probs` : les quantiles à calculer (par exemple, c(0.25, 0.5, 0.75)). | `quantiles <- quantile(vecteur, probs = c(0.25, 0.5, 0.75))` |
-| `cor()` | Calcule le coefficient de corrélation entre deux vecteurs. | `x`, `y` : les deux vecteurs pour lesquels calculer la corrélation. `method` : méthode de calcul de la corrélation (par défaut "pearson"). | `correlation <- cor(vecteur1, vecteur2, method = "pearson")` |
-| `sample()` | Sélectionne un échantillon aléatoire à partir d'un vecteur. | `x` : vecteur à partir duquel échantillonner. `size` : taille de l'échantillon. | `echantillon <- sample(vecteur, size = 3)` |
-| `rnorm()` | Génère des échantillons aléatoires suivant une distribution normale. | `n` : nombre d'échantillons à générer. `mean` : moyenne de la distribution. `sd` : écart-type de la distribution. | `echantillon <- rnorm(100, mean = 10, sd = 2)` |
-| `runif()` | Génère des échantillons aléatoires suivant une distribution uniforme. | `n` : nombre d'échantillons à générer. `min` : valeur minimale de la distribution. `max` : valeur maximale de la distribution. | `echantillon <- runif(50, min = 0, max = 1)` |
-
-
-
-# Exercices sur les Fonctions en R
-
-## `c()`, `seq()`, `rep()`, `length()`, `unique()`
+#### `c()`, `seq()`, `rep()`, `length()`, `unique()`
 
 1. Créez un nouveau vecteur en utilisant la fonction `c()` avec deux vecteurs existants.
 <details>
@@ -173,7 +65,7 @@ valeurs_uniques <- unique(c(1, 2, 2, 3, 3, 3))
 ```
 </details>
 
-## `mean()`, `class()`, `rm()`, `sum()`
+#### `mean()`, `class()`, `rm()`, `sum()`
 
 6. Calculez la moyenne du vecteur [5, 10, 15, 20] en utilisant la fonction `mean()`.
 <details>
@@ -211,7 +103,7 @@ somme <- sum(c(2, 4, 6, 8))
 ```
 </details>
 
-## Combinaison des fonctions
+#### Combinaison des fonctions
 
 10. Créez un nouveau vecteur en concaténant les vecteurs [1, 2] et [3, 4] avec la fonction `c()`.
 <details>
@@ -261,7 +153,7 @@ somme <- sum(c(10, 20, 30, 40, 50))
 ```
 </details>
 
-## Utilisation avancée
+#### Utilisation avancée
 
 15. Créez une séquence décroissante de -10 à -1 avec un incrément de 1.
 <details>
@@ -309,8 +201,6 @@ valeurs_uniques <- unique(c(3, 3, 2, 1, 1, 4, 4))
 ```
 </details>
 
-
-
 ## Exerice 2 -  Fonctions statistique et simulation
 
 ### Mémo
@@ -326,8 +216,9 @@ valeurs_uniques <- unique(c(3, 3, 2, 1, 1, 4, 4))
 | `quantile()` | Calcule les quantiles d'un vecteur. | `x` : le vecteur pour lequel calculer les quantiles. `probs` : les quantiles à calculer (par exemple, c(0.25, 0.5, 0.75)). | `quantiles <- quantile(vecteur, probs = c(0.25, 0.5, 0.75))` |
 | `cor()` | Calcule le coefficient de corrélation entre deux vecteurs. | `x`, `y` : les deux vecteurs pour lesquels calculer la corrélation. `method` : méthode de calcul de la corrélation (par défaut "pearson"). | `correlation <- cor(vecteur1, vecteur2, method = "pearson")` |
 
+### Exerice sur les Fonctions en R
 
-#### Fonctions `mean()`, `median()`, `min()`, `max()`
+#### `mean()`, `median()`, `min()`, `max()`
 
 1. Calculez la moyenne des éléments du vecteur [12, 18, 25, 30] en utilisant la fonction `mean()`.
 <details>
@@ -361,7 +252,7 @@ maximum <- max(c(3, 9, 14, 12))
 ```
 </details>
 
-## Fonctions `sd()`, `var()`
+#### `sd()`, `var()`
 
 5. Calculez l'écart type des éléments du vecteur [18, 22, 15, 28] en utilisant la fonction `sd()`.
 <details>
@@ -379,7 +270,7 @@ variance <- var(c(7, 14, 21, 28))
 ```
 </details>
 
-## Fonction `quantile()`
+#### `quantile()`
 
 7. Calculez les quantiles à 10%, 30%, et 60% du vecteur [5, 10, 15, 20, 25] en utilisant la fonction `quantile()`.
 <details>
@@ -399,7 +290,7 @@ correlation <- cor(c(2, 4, 6, 8), c(1, 3, 5, 7))
 ```
 </details>
 
-## Exercices Combinés
+#### Exercices Combinés
 
 9. Créez un nouveau vecteur en concaténant les vecteurs [1, 2, 3] et [4, 5, 6], puis calculez la moyenne.
 <details>
