@@ -11,9 +11,11 @@ nombres <- c(3, 7, 11, 15, 19)
 
 <details>
 <summary>Correction</summary>
+
 ``` 
 nombres <- c(3, 7, 11, 15, 19)
 ```
+
 </details>
 
 2. Créez un vecteur nommé 'lettres' contenant les lettres 'a', 'c', 'e', 'g', 'i'.
