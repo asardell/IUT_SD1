@@ -4,44 +4,67 @@
 Créez et manipulez des vecteurs en utilisant les fonctions de base en R. Utilisez les fonctions `c()`, `length()`, `unique()`, `mean()`, et d'autres fonctions de statistiques univariées.
 
 1. Créez un vecteur nommé 'nombres' contenant les nombres 3, 7, 11, 15, 19.
-2. Créez un vecteur nommé 'lettres' contenant les lettres 'a', 'c', 'e', 'g', 'i'.
-3. Concaténez les vecteurs 'nombres' et 'lettres' pour créer un vecteur 'mixte'.
-4. Trouvez la longueur du vecteur 'mixte' en utilisant la fonction `length()`.
-5. Créez un vecteur 'pairs' contenant les nombres pairs de 2 à 10.
-6. Créez un vecteur 'replication' contenant la répétition du nombre 5 cinq fois.
-7. Créez un vecteur 'sequence' contenant une séquence de 1 à 10 avec un pas de 2.
-8. Trouvez les valeurs uniques dans le vecteur 'sequence' en utilisant la fonction `unique()`.
-9. Calculez la moyenne des éléments du vecteur 'nombres' en utilisant la fonction `mean()`.
-
+   
 <details>
 <summary>Correction</summary>
-
-```r
-# Correction
-
-# 1.
+```r 
 nombres <- c(3, 7, 11, 15, 19)
+```
+</details>
 
-# 2.
+2. Créez un vecteur nommé 'lettres' contenant les lettres 'a', 'c', 'e', 'g', 'i'.
+<details>
+<summary>Correction</summary>
+```r 
 lettres <- c('a', 'c', 'e', 'g', 'i')
-
-# 3.
+```
+</details>
+3. Concaténez les vecteurs 'nombres' et 'lettres' pour créer un vecteur 'mixte'.
+<details>
+<summary>Correction</summary>
+```r 
 mixte <- c(nombres, lettres)
-
-# 4.
+```
+</details>
+4. Trouvez la longueur du vecteur 'mixte' en utilisant la fonction `length()`.
+<details>
+<summary>Correction</summary>
+```r 
 longueur_mixte <- length(mixte)
-
-# 5.
+```
+</details>
+5. Créez un vecteur 'pairs' contenant les nombres pairs de 2 à 10.
+<details>
+<summary>Correction</summary>
+```r 
 pairs <- seq(2, 10, by = 2)
-
-# 6.
+```
+</details>
+6. Créez un vecteur 'replication' contenant la répétition du nombre 5 cinq fois.
+<details>
+<summary>Correction</summary>
+```r 
 replication <- rep(5, times = 5)
-
-# 7.
+```
+</details>
+7. Créez un vecteur 'sequence' contenant une séquence de 1 à 10 avec un pas de 2.
+<details>
+<summary>Correction</summary>
+```r 
 sequence <- seq(1, 10, by = 2)
-
-# 8.
+```
+</details>
+8. Trouvez les valeurs uniques dans le vecteur 'sequence' en utilisant la fonction `unique()`.
+<details>
+<summary>Correction</summary>
+```r 
 valeurs_uniques <- unique(sequence)
-
-# 9.
+```
+</details>
+9.  Calculez la moyenne des éléments du vecteur 'nombres' en utilisant la fonction `mean()`.
+<details>
+<summary>Correction</summary>
+```r 
 moyenne_nombres <- mean(nombres)
+```
+</details>
