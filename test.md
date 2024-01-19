@@ -123,11 +123,6 @@ moyenne_nombres <- mean(nombres)
 | `cor()` | Calcule le coefficient de corrélation entre deux vecteurs. | `x`, `y` : les deux vecteurs pour lesquels calculer la corrélation. `method` : méthode de calcul de la corrélation (par défaut "pearson"). | `correlation <- cor(vecteur1, vecteur2, method = "pearson")` |
 
 
-
-
-
-
-
 # Exercices sur les Fonctions en R
 
 ## `c()`, `seq()`, `rep()`, `length()`, `unique()`
