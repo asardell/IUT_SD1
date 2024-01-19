@@ -136,41 +136,45 @@ moyenne_nombres <- mean(nombres)
 <details>
 <summary>Correction</summary>
 
-     ```r
-     nouveau_vecteur <- c(vecteur1, vecteur2)
-     ```
+```r
+nouveau_vecteur <- c(vecteur1, vecteur2)
+```
+</details>
 
 2. Générez une séquence de nombres de 1 à 20 avec un incrément de 3 en utilisant la fonction `seq()`.
 <details>
 <summary>Correction</summary>
 
-     ```r
-     sequence <- seq(1, 20, by = 3)
-     ```
+```r
+sequence <- seq(1, 20, by = 3)
+```
 
 3. Répétez les éléments du vecteur [2, 4, 6] cinq fois en utilisant la fonction `rep()`.
 <details>
 <summary>Correction</summary>
 
-     ```r
-     replication <- rep(c(2, 4, 6), times = 5)
-     ```
+```r
+replication <- rep(c(2, 4, 6), times = 5)
+```
+</details>
 
 4. Trouvez la longueur du vecteur [10, 20, 30, 40] en utilisant la fonction `length()`.
 <details>
 <summary>Correction</summary>
 
-     ```r
-     longueur <- length(c(10, 20, 30, 40))
-     ```
+```r
+longueur <- length(c(10, 20, 30, 40))
+```
+</details>
 
 5. Créez un vecteur contenant les valeurs uniques du vecteur [1, 2, 2, 3, 3, 3] en utilisant la fonction `unique()`.
 <details>
 <summary>Correction</summary>
 
-     ```r
-     valeurs_uniques <- unique(c(1, 2, 2, 3, 3, 3))
-     ```
+```r
+valeurs_uniques <- unique(c(1, 2, 2, 3, 3, 3))
+```
+</details>
 
 ## `mean()`, `class()`, `rm()`, `sum()`
 
@@ -178,138 +182,132 @@ moyenne_nombres <- mean(nombres)
 <details>
 <summary>Correction</summary>
 
-     ```r
-     moyenne <- mean(c(5, 10, 15, 20))
-     ```
+```r
+moyenne <- mean(c(5, 10, 15, 20))
+```
+</details>
 
 7. Obtenez le type de classe de l'objet "data_frame" en utilisant la fonction `class()`.
 <details>
 <summary>Correction</summary>
 
-     ```r
-     type_classe <- class(data_frame)
-     ```
+```r
+type_classe <- class(data_frame)
+```
+</details>
 
 8. Supprimez les objets "variable1" et "variable2" de l'environnement en utilisant la fonction `rm()`.
 <details>
 <summary>Correction</summary>
 
-     ```r
-     rm(variable1, variable2)
-     ```
+```r
+rm(variable1, variable2)
+```
+</details>
 
 9. Calculez la somme des éléments du vecteur [2, 4, 6, 8] en utilisant la fonction `sum()`.
 <details>
 <summary>Correction</summary>
 
-     ```r
-     somme <- sum(c(2, 4, 6, 8))
-     ```
+```r
+somme <- sum(c(2, 4, 6, 8))
+```
+</details>
 
 ## Combinaison des fonctions
 
 10. Créez un nouveau vecteur en concaténant les vecteurs [1, 2] et [3, 4] avec la fonction `c()`.
- <details>
+<details>
 <summary>Correction</summary>
 
-      ```
-</details>r
-      nouveau_vecteur <- c(1, 2, 3, 4)
-      ```
+```r
+nouveau_vecteur <- c(1, 2, 3, 4)
+```
 </details>
 
 11. Générez une séquence de nombres de 5 à 50 avec un incrément de 5, puis répétez-la trois fois.
- <details>
+<details>
 <summary>Correction</summary>
 
-      ```
-</details>r
-      sequence <- seq(5, 50, by = 5)
-      repetition <- rep(sequence, times = 3)
-      ```
+```r
+sequence <- seq(5, 50, by = 5)
+repetition <- rep(sequence, times = 3)
+```
 </details>
 
 12. Créez un vecteur contenant uniquement les valeurs uniques du vecteur [1, 2, 3, 2, 4, 5] en utilisant `c()` et `unique()`.
- <details>
+<details>
 <summary>Correction</summary>
 
-      ```
-</details>r
-      valeurs_uniques <- unique(c(1, 2, 3, 2, 4, 5))
-      ```
+```r
+valeurs_uniques <- unique(c(1, 2, 3, 2, 4, 5))
+```
 </details>
 
 13. Supprimez tous les objets de l'environnement qui ont le type de classe "character".
- <details>
+<details>
 <summary>Correction</summary>
 
-      ```
-</details>r
-      objets_a_supprimer <- ls(pattern = "character")
-      rm(list = objets_a_supprimer)
-      ```
+```r
+objets_a_supprimer <- ls(pattern = "character")
+rm(list = objets_a_supprimer)
+```
 </details>
 
 14. Calculez la moyenne et la somme des éléments du vecteur [10, 20, 30, 40, 50].
- <details>
+<details>
 <summary>Correction</summary>
 
-      ```
-</details>r
-      moyenne <- mean(c(10, 20, 30, 40, 50))
-      somme <- sum(c(10, 20, 30, 40, 50))
-      ```
+```r
+moyenne <- mean(c(10, 20, 30, 40, 50))
+somme <- sum(c(10, 20, 30, 40, 50))
+```
 </details>
 
 ## Utilisation avancée
 
 15. Créez une séquence décroissante de -10 à -1 avec un incrément de 1.
- <details>
+<details>
 <summary>Correction</summary>
 
-      ```
-</details>r
-      sequence_decroissante <- seq(-10, -1, by = 1)
-      ```
+```r
+sequence_decroissante <- seq(-10, -1, by = 1)
+```
 </details>
 
 16. Générez une séquence de nombres de 0 à 1 avec un incrément de 0.1.
- <details>
+<details>
 <summary>Correction</summary>
 
-      ```
-</details>r
-      sequence <- seq(0, 1, by = 0.1)
-      ```
+```r
+sequence <- seq(0, 1, by = 0.1)
+```
 </details>
 
 17. Répétez les éléments du vecteur [1, 2, 3] deux fois, puis créez une séquence de 1 à 6.
- <details>
+<details>
 <summary>Correction</summary>
 
-      ```
-</details>r
-      repetition <- rep(c(1, 2, 3), times = 2)
-      sequence <- seq(1, 6, by = 1)
-      ```
+```r
+repetition <- rep(c(1, 2, 3), times = 2)
+sequence <- seq(1, 6, by = 1)
+```
 </details>
 
 18. Calculez la longueur d'une séquence de nombres de 5 à 100 avec un incrément de 10.
- <details>
+<details>
 <summary>Correction</summary>
 
-      ```
-</details>r
-      longueur <- length(seq(5, 100, by = 10))
-      ```
+```r
+longueur <- length(seq(5, 100, by = 10))
+```
 </details>
 
 19. Créez un vecteur contenant les valeurs uniques du vecteur [3, 3, 2, 1, 1, 4, 4].
- <details>
+<details>
 <summary>Correction</summary>
 
-      ```
-</details>r
-      valeurs_uniques <- unique(c(3, 3, 2, 1, 1, 4, 4))
-      ```
+```r
+valeurs_uniques <- unique(c(3, 3, 2, 1, 1, 4, 4))
+```
 </details>
