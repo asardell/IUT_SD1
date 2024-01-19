@@ -4,7 +4,11 @@
 Créez et manipulez des vecteurs en utilisant les fonctions de base en R. Utilisez les fonctions `c()`, `length()`, `unique()`, `mean()`, et d'autres fonctions de statistiques univariées.
 
 1. Créez un vecteur nommé 'nombres' contenant les nombres 3, 7, 11, 15, 19.
-   
+
+``` 
+nombres <- c(3, 7, 11, 15, 19)
+```
+
 <details>
 <summary>Correction</summary>
 ``` 
@@ -63,6 +67,7 @@ sequence <- seq(1, 10, by = 2)
 8. Trouvez les valeurs uniques dans le vecteur 'sequence' en utilisant la fonction `unique()`.
 <details>
 <summary>Correction</summary>
+
 ```
 valeurs_uniques <- unique(sequence)
 ```
@@ -71,6 +76,7 @@ valeurs_uniques <- unique(sequence)
 9.  Calculez la moyenne des éléments du vecteur 'nombres' en utilisant la fonction `mean()`.
 <details>
 <summary>Correction</summary>
+
 ```
 moyenne_nombres <- mean(nombres)
 ```
