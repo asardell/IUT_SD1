@@ -143,6 +143,7 @@ nouveau_vecteur <- c(vecteur1, vecteur2)
 ```r
 sequence <- seq(1, 20, by = 3)
 ```
+</details>
 
 3. Répétez les éléments du vecteur [2, 4, 6] cinq fois en utilisant la fonction `rep()`.
 <details>
