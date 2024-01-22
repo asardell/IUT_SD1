@@ -54,6 +54,7 @@ vecteur[3]
 ```r
 v1 <- 1:5
 ```
+</details>
 
 2. Ensuite, créer un vecteur `v2` en ajoutant 3 à chaque élément de `v1`.
 <details>
