@@ -11,13 +11,10 @@
    2. [Exercice 2 -  Fonctions statistique univariées et simulation](#exercice-2----fonctions-statistique-univariées-et-simulation)
       1. [Mémo](#mémo-1)
       2. [Exerice sur les Fonctions en R](#exerice-sur-les-fonctions-en-r-1)
-         1. [`mean()`, `median()`, `min()`, `max()`](#mean-median-min-max)
-         2. [`sd()`, `var()`](#sd-var)
-         3. [`quantile()`](#quantile)
-         4. [`cor()`](#cor)
-         5. [Exercices Combinés](#exercices-combinés)
-2. [type de vecteur](#type-de-vecteur)
-3. [indexation](#indexation)
+         1. [`runif()`, `mean()`, `median()`, `min()`, `max()`](#runif-mean-median-min-max)
+         2. [`rnorm()`, `mean()`, `sd()`,  `hist()`, `quantile()`](#rnorm-mean-sd--hist-quantile)
+         3. [`sum()` , `round()`](#sum--round)
+         4. [`sample()`, `table()`, `prop.table()` , `unique()`, `sort()`](#sample-table-proptable--unique-sort)
 
 
 ## Exercice 1 -  Fonctions usuelles
@@ -305,22 +302,20 @@ rm(vecteur)
 ```
 </details>
 
-
-
 ## Exercice 2 -  Fonctions statistique univariées et simulation
 
 ### Mémo
 
 | Nom de Fonction | Description | Argument Pertinent | Exemple |
 |------------------|-------------|--------------------|---------|
-| `sum()` | Calcule la somme des éléments d'un vecteur. | | `somme <- sum(vecteur)` |
-| `mean()` | Calcule la moyenne des éléments d'un vecteur. || `moyenne <- mean(vecteur)` |
-| `median()` | Calcule la médiane d'un vecteur. | | `mediane <- median(vecteur)` |
-| `min()` | Retourne la valeur minimale d'un vecteur. |  | `minimum <- min(vecteur)` |
-| `max()` | Retourne la valeur maximale d'un vecteur. |  | `maximum <- max(vecteur)` |
-| `sd()` | Calcule l'écart type d'un vecteur. |  | `ecart_type <- sd(vecteur)` |
-| `var()` | Calcule la variance d'un vecteur. |  | `variance <- var(vecteur)` |
-| `quantile()` | Calcule les quantiles d'un vecteur. | `x` : le vecteur pour lequel calculer les quantiles. `probs` : les quantiles à calculer (par exemple, c(0.25, 0.5, 0.75)). | `quantiles <- quantile(vecteur, probs = c(0.25, 0.5, 0.75))` |
+| `sum()` | Calcule la somme des éléments d'un vecteur. | `na.rm` : spécifie si les valeurs NA doivent être retirées (par défaut FALSE). | `somme <- sum(vecteur)` |
+| `mean()` | Calcule la moyenne des éléments d'un vecteur. | `na.rm` : spécifie si les valeurs NA doivent être retirées (par défaut FALSE). | `moyenne <- mean(vecteur)` |
+| `median()` | Calcule la médiane d'un vecteur. | `na.rm` : spécifie si les valeurs NA doivent être retirées (par défaut FALSE). | `mediane <- median(vecteur)` |
+| `min()` | Retourne la valeur minimale d'un vecteur. | `na.rm` : spécifie si les valeurs NA doivent être retirées (par défaut FALSE).  | `minimum <- min(vecteur)` |
+| `max()` | Retourne la valeur maximale d'un vecteur. | `na.rm` : spécifie si les valeurs NA doivent être retirées (par défaut FALSE).  | `maximum <- max(vecteur)` |
+| `sd()` | Calcule l'écart type d'un vecteur. | `na.rm` : spécifie si les valeurs NA doivent être retirées (par défaut FALSE).  | `ecart_type <- sd(vecteur)` |
+| `var()` | Calcule la variance d'un vecteur. | `na.rm` : spécifie si les valeurs NA doivent être retirées (par défaut FALSE).  | `variance <- var(vecteur)` |
+| `quantile()` | Calcule les quantiles d'un vecteur. | `x` : le vecteur pour lequel calculer les quantiles. `probs` : les quantiles à calculer (par exemple, c(0.25, 0.5, 0.75)). `na.rm` : spécifie si les valeurs NA doivent être retirées (par défaut FALSE). | `quantiles <- quantile(vecteur, probs = c(0.25, 0.5, 0.75))` |
 | `sort()` | Trie les éléments d'un vecteur ou d'une matrice. | `x` : le vecteur ou la matrice à trier. `decreasing` : un booléen indiquant si le tri doit être effectué par ordre décroissant (par défaut, `FALSE`). | `vecteur_tri <- sort(vecteur)` |
 | `unique()` | Retourne les valeurs uniques d'un vecteur. |  | `valeurs_uniques <- unique(vecteur)` |
 | `round()` | Arrondit les nombres d'un vecteur à un nombre spécifié de décimales. | `x` : le vecteur à arrondir. `digits` : nombre de décimales (par défaut 0). | `arrondi <- round(3.14159, digits = 2)` |
@@ -330,122 +325,213 @@ rm(vecteur)
 | `rnorm()` | Génère des échantillons aléatoires suivant une distribution normale. | `n` : nombre d'échantillons à générer. `mean` : moyenne de la distribution. `sd` : écart-type de la distribution. | `echantillon_norm <- rnorm(100, mean = 10, sd = 2)` |
 | `runif()` | Génère des échantillons aléatoires suivant une distribution uniforme. | `n` : nombre d'échantillons à générer. `min` : valeur minimale de la distribution. `max` : valeur maximale de la distribution. | `echantillon_unif <- runif(50, min = 0, max = 1)` |
 | `sample()` | Sélectionne un échantillon aléatoire à partir d'un vecteur. | `x` : vecteur à partir duquel échantillonner. `size` : taille de l'échantillon. | `echantillon_aleatoire <- sample(vecteur, size = 3)` |
+| `hist()` | Crée un histogramme à partir d'un vecteur de données. | `x` : le vecteur de données à utiliser. `breaks` : le nombre de bâtons (barres) dans l'histogramme. | `histogramme <- hist(data_vector, breaks = 10)` |
+| `boxplot()` | Crée une boîte à moustaches à partir d'un ou plusieurs vecteurs de données. | `x` : un ou plusieurs vecteurs de données à utiliser. | `boite_moustaches <- boxplot(data_vector1, data_vector2)` |
 
 ### Exerice sur les Fonctions en R
 
-#### `mean()`, `median()`, `min()`, `max()`
+#### `runif()`, `mean()`, `median()`, `min()`, `max()`
 
-1. Calculez la moyenne des éléments du vecteur [12, 18, 25, 30] en utilisant la fonction `mean()`.
+Pour chaque question, afficher le vecteur simulé et calculer les statistiques univariées à l'aide des fonctions ci-dessus.
+
+1. Générez un vecteur de 5 nombres aléatoires compris entre 0 et 1 en utilisant la fonction `runif()`.
 <details>
 <summary>Correction</summary>
 
 ```r
-moyenne <- mean(c(12, 18, 25, 30))
+vecteur <- runif(n = 5, min = 0, max = 1)
+vecteur
+mean(vecteur)
+median(vecteur)
+min(vecteur)
+max(vecteur)
 ```
 </details>
 
-2. Calculez la médiane du vecteur [5, 10, 15, 20, 25] en utilisant la fonction `median()`.
+2. Créez une séquence de 10 nombres aléatoires compris entre -5 et 5 à l'aide de la fonction `runif()`.
 <details>
 <summary>Correction</summary>
 
 ```r
-mediane <- median(c(5, 10, 15, 20, 25))
+vecteur <- runif(n = 10, min = -5, max = 5)
+vecteur
+mean(vecteur)
+median(vecteur)
+min(vecteur)
+max(vecteur)
 ```
 </details>
 
-3. Trouvez la valeur minimale du vecteur [8, 15, 7, 21] en utilisant la fonction `min()`.
+3. Générez un échantillon de 100 nombres aléatoires suivant une distribution uniforme entre 10 et 20 avec `runif()`.
 <details>
 <summary>Correction</summary>
 
 ```r
-minimum <- min(c(8, 15, 7, 21))
+vecteur <- runif(n = 100, min = 10, max = 20)
+vecteur
+mean(vecteur)
+median(vecteur)
+min(vecteur)
+max(vecteur)
 ```
 </details>
 
-4. Obtenez la valeur maximale du vecteur [3, 9, 14, 12] en utilisant la fonction `max()`.
+4. Créez une séquence de 15 nombres aléatoires compris entre 50 et 100 en utilisant `runif()`.
 <details>
 <summary>Correction</summary>
 
 ```r
-maximum <- max(c(3, 9, 14, 12))
+vecteur <- runif(n= 15, min = 50, max = 100)
+vecteur
+mean(vecteur)
+median(vecteur)
+min(vecteur)
+max(vecteur)
 ```
 </details>
 
-#### `sd()`, `var()`
 
-5. Calculez l'écart type des éléments du vecteur [18, 22, 15, 28] en utilisant la fonction `sd()`.
+#### `rnorm()`, `mean()`, `sd()`,  `hist()`, `quantile()`
+
+Pour chaque question, représenter graphique l'échantillon aléatoire avec un histogramme.
+
+1. Générez un échantillon de 20 nombres aléatoires suivant une distribution normale avec une moyenne de -2 et un écart-type de 3. Calculez la moyenne et l'écart-type de cet échantillon.
 <details>
 <summary>Correction</summary>
 
 ```r
-ecart_type <- sd(c(18, 22, 15, 28))
+echantillon <- rnorm(n = 200, mean = -2, sd = 3)
+moyenne <- mean(echantillon)
+ecart_type <- sd(echantillon)
+print(paste("Moyenne : ", moyenne))
+print(paste("Écart-type : ", ecart_type))
+hist(echantillon)
 ```
 </details>
 
-6. Calculez la variance du vecteur [7, 14, 21, 28] en utilisant la fonction `var()`.
+2. Générez un échantillon de 2000 nombres aléatoires suivant une distribution normale avec une moyenne de -2 et un écart-type de 3. Calculez la moyenne et l'écart-type de cet échantillon.
 <details>
 <summary>Correction</summary>
 
 ```r
-variance <- var(c(7, 14, 21, 28))
+echantillon <- rnorm(n = 2000, mean = -2, sd = 3)
+moyenne <- mean(echantillon)
+ecart_type <- sd(echantillon)
+print(paste("Moyenne : ", moyenne))
+print(paste("Écart-type : ", ecart_type))
+hist(echantillon)
 ```
 </details>
 
-#### `quantile()`
-
-7. Calculez les quantiles à 10%, 30%, et 60% du vecteur [5, 10, 15, 20, 25] en utilisant la fonction `quantile()`.
+3. Générez un échantillon de 2000 nombres aléatoires suivant une distribution normale avec une moyenne de 0 et un écart-type de 1. Calculez la moyenne et l'écart-type de cet échantillon.
 <details>
 <summary>Correction</summary>
 
 ```r
-quantiles <- quantile(c(5, 10, 15, 20, 25), probs = c(0.1, 0.3, 0.6))
+echantillon <- rnorm(n = 2000, mean = 0, sd = 1)
+moyenne <- mean(echantillon)
+ecart_type <- sd(echantillon)
+print(paste("Moyenne : ", moyenne))
+print(paste("Écart-type : ", ecart_type))
+hist(echantillon)
 ```
 </details>
 
-#### `cor()`
-
-8. Calculez le coefficient de corrélation entre deux vecteurs [2, 4, 6, 8] et [1, 3, 5, 7] en utilisant la fonction `cor()`.
+4. Calculez les quantiles à 25%, 50%, puis 75% de cet échantillon précédent.
 <details>
 <summary>Correction</summary>
 
 ```r
-correlation <- cor(c(2, 4, 6, 8), c(1, 3, 5, 7))
+quantile(echantillon, probs = c(0.25))
+quantile(echantillon, probs = c(0.50))
+quantile(echantillon, probs = c(0.75))
 ```
 </details>
 
-#### Exercices Combinés
-
-9. Créez un nouveau vecteur en concaténant les vecteurs [1, 2, 3] et [4, 5, 6], puis calculez la moyenne.
+5. Calculez les déciles de cet échantillon précédent.
 <details>
 <summary>Correction</summary>
 
 ```r
-nouveau_vecteur <- c(1, 2, 3, 4, 5, 6)
-moyenne_combinee <- mean(nouveau_vecteur)
+quantile(echantillon, probs = seq(0,1,0.1))
 ```
 </details>
 
-10. Générez une séquence de nombres de 5 à 50 avec un incrément de 5, puis trouvez la médiane.
+6. Calculez les centiles de cet échantillon précédent.
 <details>
 <summary>Correction</summary>
 
 ```r
-sequence <- seq(5, 50, by = 5)
-mediane_combinee <- median(sequence)
+quantile(echantillon, probs = seq(0,1,0.01))
 ```
 </details>
 
-11. Répétez les éléments du vecteur [2, 4, 6] trois fois, puis calculez la somme.
+
+#### `sum()` , `round()`
+
+1. Générez un échantillon de 3000 salaires aléatoires suivant une distribution normale avec une moyenne de 2400€ et un écart-type de 300€. Calculez la moyenne et l'écart-type de cet échantillon.
 <details>
 <summary>Correction</summary>
 
 ```r
-repetition <- rep(c(2, 4, 6), times = 3)
-somme_combinee <- sum(repetition)
+echantillon <- rnorm(n = 3000, mean = 2400, sd = 300)
+moyenne <- mean(echantillon)
+ecart_type <- sd(echantillon)
+print(paste("Moyenne : ", moyenne))
+print(paste("Écart-type : ", ecart_type))
+```
+</details>
+
+
+2. Arrondir les salaires avec deux décimales.
+<details>
+<summary>Correction</summary>
+
+```r
+echantillon <- round(echantillon, 2)
+```
+</details>
+
+
+3. Calculer la masse salariale.
+<details>
+<summary>Correction</summary>
+
+```r
+masse_salariale <- sum(echantillon)
+print(paste("Masse salariale : ", masse_salariale))
+```
+</details>
+
+4. Quel est le salaire médian ?
+<details>
+<summary>Correction</summary>
+
+```r
+salaire_median <- median(echantillon)
+print(paste("Salaire médian : ", salaire_median))
+```
+</details>
+
+5. Interpréter le quantile 99%
+<details>
+<summary>Correction</summary>
+
+```r
+quantile(echantillon, probs = 0.99)
+```
+</details>
+
+6. Interpréter le quantile 20%
+<details>
+<summary>Correction</summary>
+
+```r
+quantile(echantillon, probs = 0.2)
 ```
 </details>
 
 
 
-# type de vecteur
-# indexation
+#### `sample()`, `table()`, `prop.table()` , `unique()`, `sort()`
+
