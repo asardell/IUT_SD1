@@ -1,14 +1,14 @@
 # TD1
 
 1. [TD1](#td1)
-   1. [Exerice 1 -  Fonctions usuelles](#exerice-1----fonctions-usuelles)
+   1. [Exercice 1 -  Fonctions usuelles](#exercice-1----fonctions-usuelles)
       1. [Mémo](#mémo)
       2. [Exerice sur les Fonctions en R](#exerice-sur-les-fonctions-en-r)
-         1. [`c()`](#c)
+         1. [`c()`,  `class`](#c--class)
          2. [`c()`, `seq()`, `length()`](#c-seq-length)
          3. [`c()`, `rep()`](#c-rep)
          4. [`rm()`](#rm)
-   2. [Exerice 2 -  Fonctions statistique univariées et simulation](#exerice-2----fonctions-statistique-univariées-et-simulation)
+   2. [Exercice 2 -  Fonctions statistique univariées et simulation](#exercice-2----fonctions-statistique-univariées-et-simulation)
       1. [Mémo](#mémo-1)
       2. [Exerice sur les Fonctions en R](#exerice-sur-les-fonctions-en-r-1)
          1. [`mean()`, `median()`, `min()`, `max()`](#mean-median-min-max)
@@ -20,7 +20,7 @@
 3. [indexation](#indexation)
 
 
-## Exerice 1 -  Fonctions usuelles
+## Exercice 1 -  Fonctions usuelles
 
 ### Mémo
 | Nom de Fonction | Description | Argument Pertinent | Exemple |
@@ -36,15 +36,16 @@
 ### Exerice sur les Fonctions en R
 
 
-#### `c()`
+#### `c()`,  `class`
 
-1. Créer un vecteur numérique de nombres de 1 à 5 et afficher sa classe.
+1. Créer un vecteur numérique de nombres de 1 à 5 et afficher sa classe. Afficher le troisième élément du vecteur.
 <details>
 <summary>Correction</summary>
 
 ```r
 vecteur <- c(1, 2, 3, 4, 5)
-class_vecteur <- class(vecteur)
+class(vecteur)
+vecteur[3]
 ```
 </details>
 
@@ -55,6 +56,7 @@ class_vecteur <- class(vecteur)
 
 ```r
 v1 <- 1:5
+```
 
 2. Ensuite, créer un vecteur `v2` en ajoutant 3 à chaque élément de `v1`.
 <details>
@@ -92,69 +94,74 @@ v5 <- v4 / 2
 ```
 </details>
 
-2. Créer un vecteur caractère avec les jours de la semaine et afficher sa classe.
+6. Créer un vecteur caractère avec les jours de la semaine et afficher sa classe. Afficher le 2ème et 7ème éléments du vecteur.
 <details>
 <summary>Correction</summary>
 
 ```r
 vecteur <- c("Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche")
-class_vecteur <- class(vecteur)
+class(vecteur)
+vecteur[c(2,7)]
 ```
 </details>
 
-3. Créer un vecteur avec des valeurs booléennesafficher sa classe.
+7. Créer un vecteur avec des valeurs booléennes et afficher sa classe.
 <details>
 <summary>Correction</summary>
 
 ```r
 vecteur <- c(TRUE, FALSE, TRUE, FALSE, TRUE)
-class_vecteur <- class(vecteur)
+class(vecteur)
 ```
 </details>
 
-4. Créer un vecteur numérique contenant des nombres décimaux et afficher sa classe.
+8. Créer un vecteur numérique contenant des nombres décimaux et afficher sa classe. Afficher tous les éléments sauf le 3ème.
 <details>
 <summary>Correction</summary>
 
 ```r
 vecteur <- c(1.2, 2.5, 3.8, 4.1, 5.6)
-class_vecteur <- class(vecteur)
+class(vecteur)
+vecteur[-3]
 ```
 </details>
 
-5. Créer un vecteur caractère avec le nom des mois et afficher sa classe.
+9. Créer un vecteur caractère avec le nom des mois et afficher sa classe. Afficher les mois du premier trimestre.
 <details>
 <summary>Correction</summary>
 
 ```r
 vecteur <- c("Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre")
-class_vecteur <- class(vecteur)
+class(vecteur)
+vecteur[c(1,2,3)]
 ```
 </details>
 
 
-7. Créer un vecteur numérique avec des nombres négatifs et afficher sa classe.
+10. Créer un vecteur numérique avec des nombres négatifs et afficher sa classe. Afficher le dernier et premier éléments du vecteur.
 <details>
 <summary>Correction</summary>
 
 ```r
 vecteur <- c(-1, -2, -3, -4, -5)
-class_vecteur <- class(vecteur)
+class(vecteur)
+vecteur[c(5,1)]
 ```
 </details>
 
-8. Créer un vecteur caractère contenant des noms de fruits et afficher sa classe.
+11. Créer un vecteur caractère contenant des noms de fruits et afficher sa classe. Afficher tous les éléments sauf les deux premiers.
 <details>
 <summary>Correction</summary>
 
 ```r
 vecteur <- c("Pomme", "Banane", "Orange", "Fraise", "Ananas")
-class_vecteur <- class(vecteur)
+class(vecteur)
+vecteur[-c(1,2)]
 ```
 </details>
 
 
-10. Créer un vecteur numérique avec des valeurs manquantes (NA) et afficher sa classe.
+12. Créer un vecteur numérique avec des valeurs manquantes (NA) et afficher sa classe.
 <details>
 <summary>Correction</summary>
 
@@ -188,7 +195,7 @@ lenght(seq)
 ```
 </details>
 
-1. Créer une séquence décroissante de 0 à -5 puis calculer la longueur du vecteur.
+3. Créer une séquence décroissante de 0 à -5 puis calculer la longueur du vecteur.
 <details>
 <summary>Correction</summary>
 
@@ -198,7 +205,7 @@ lenght(seq)
 ```
 </details>
 
-1. Générer une séquence de nombres de 5 à 50 avec un pas de 5 puis calculer la longueur du vecteur.
+4. Générer une séquence de nombres de 5 à 50 avec un pas de 5 puis calculer la longueur du vecteur.
 <details>
 <summary>Correction</summary>
 
@@ -208,7 +215,7 @@ lenght(seq)
 ```
 </details>
 
-1. Créer une séquence de 10 à 1 en ordre décroissant puis calculer la longueur du vecteur.
+5. Créer une séquence de 10 à 1 en ordre décroissant puis calculer la longueur du vecteur.
 <details>
 <summary>Correction</summary>
 
@@ -218,7 +225,7 @@ lenght(seq)
 ```
 </details>
 
-1. Générer une séquence de nombres de 0 à 1 avec un pas de 0.1 puis calculer la longueur du vecteur.
+6. Générer une séquence de nombres de 0 à 1 avec un pas de 0.1 puis calculer la longueur du vecteur.
 <details>
 <summary>Correction</summary>
 
@@ -228,7 +235,7 @@ lenght(seq)
 ```
 </details>
 
-1. Générer une séquence de 5 à -5 avec un pas de -1 puis calculer la longueur du vecteur.
+7. Générer une séquence de 5 à -5 avec un pas de -1 puis calculer la longueur du vecteur.
 <details>
 <summary>Correction</summary>
 
@@ -238,7 +245,7 @@ lenght(seq)
 ```
 </details>
 
-1.  Générer une séquence de 1 à 10 avec seulement les nombres impairs puis calculer la longueur du vecteur.
+8.  Générer une séquence de 1 à 10 avec seulement les nombres impairs puis calculer la longueur du vecteur.
 <details>
 <summary>Correction</summary>
 
@@ -260,7 +267,7 @@ vecteur <- rep(3, times = 5)
 ```
 </details>
 
-1. Créer un vecteur répétant les lettres 'A', 'B', 'C' trois fois chacune.
+2. Créer un vecteur répétant les lettres 'A', 'B', 'C' trois fois chacune.
 <details>
 <summary>Correction</summary>
 
@@ -269,7 +276,7 @@ vecteur <- rep(c('A', 'B', 'C'), times = 3)
 ```
 </details>
 
-1. Répéter la séquence de nombres de 1 à 3 trois fois et stocker le résultat dans un vecteur.
+3. Répéter la séquence de nombres de 1 à 3 trois fois et stocker le résultat dans un vecteur.
 <details>
 <summary>Correction</summary>
 
@@ -278,7 +285,7 @@ vecteur <- rep(1:3, times = 3)
 ```
 </details>
 
-1. Créer un vecteur répétant les valeurs TRUE et FALSE quatre fois chacune.
+4. Créer un vecteur répétant les valeurs TRUE et FALSE quatre fois chacune.
 <details>
 <summary>Correction</summary>
 
@@ -289,7 +296,7 @@ vecteur <- rep(c(TRUE, FALSE), times = 4)
 
 #### `rm()`
 
-1. Utiliser la fonction rm pour supprimer les objets des questions précédentes.
+5. Utiliser la fonction rm pour supprimer les objets des questions précédentes.
 <details>
 <summary>Correction</summary>
 
@@ -299,7 +306,8 @@ rm(vecteur)
 </details>
 
 
-## Exerice 2 -  Fonctions statistique univariées et simulation
+
+## Exercice 2 -  Fonctions statistique univariées et simulation
 
 ### Mémo
 
