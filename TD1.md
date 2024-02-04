@@ -28,7 +28,6 @@ Voici les objectifs de ce TD :
          2. [Les fonctions `rnorm()`, `mean()`, `sd()`,  `hist()`, `quantile()`](#les-fonctions-rnorm-mean-sd--hist-quantile)
          3. [Les fonctions `sum()` , `round()`](#les-fonctions-sum--round)
          4. [Les fonctions `sample()`, `table()`, `prop.table()` , `unique()`, `sort()`](#les-fonctions-sample-table-proptable--unique-sort)
-   5. [Comment rendre son travail ?](#comment-rendre-son-travail-)
 
 
 
@@ -677,11 +676,3 @@ sort(frequence, decreasing = TRUE)
 print("Oui, d'après la loi des grands nombres, les probabilités d'obtenir chacune des faces se rapprochent des probabilités théoriques.")
 ```
 </details>
-
-## Comment rendre son travail ? 
-
-1. Créer un compte sur GitHub.com
-2. Créer un repository **public** intitulé `iut_sd1_programmation_r` en **cochant** l'ajout d'un fichier *README.md* par défaut.
-3. Uploader son script dans son repository
-
-:warning: L'ensemble des exercices sont à réaliser dans un seul script nommé `iut_sd1_r_td1`
