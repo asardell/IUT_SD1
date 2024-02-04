@@ -650,7 +650,7 @@ table(simulation)
 ```
 </details>
 
-5. Compter le nombre d'apparition de chaque face en pourcentage avec la fonction  `prop.table()`. Théoriquement, nous devrions avoir /frac{1}{6} d'obtenir chaque face. Est-ce le cas ?
+5. Compter le nombre d'apparition de chaque face en pourcentage avec la fonction  `prop.table()`. Théoriquement, nous devrions avoir 1/6 chance d'obtenir chaque face. Est-ce le cas ?
 <details>
 <summary>Correction</summary>
 
