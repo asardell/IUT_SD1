@@ -54,6 +54,7 @@ Voici les objectifs de ce TD :
 a <- 10
 b <- 5
 ```
+</details>
 
 2. Multiplier les deux objets et stocker le résultat dans un objet `resultat`. Afficher cet objet avec la fonction  `print() `.
 <details>
@@ -63,6 +64,7 @@ b <- 5
 resultat <- a * b
 print(resultat)
 ```
+</details>
 
 3. Créer un objet `A` avec la valeur `7.2` et un objet `B` avec la valeur `10.1`. Que remarquons-nous avec les deux premiers objets ?
 <details>
@@ -73,6 +75,7 @@ A <- 7.2
 b <- 10.1
 print("Le langage R est sensible à la casse (majuscule/minuscule) car nous avons 4 objets a,b,A et B")
 ```
+</details>
 
 4. Additionner les deux objets `A` et  `B` puis stocker le résultat dans un objet `resultat`. Que remarquons-nous avec le précédent objet `resultat` ?
 <details>
@@ -83,6 +86,7 @@ resultat <- A + B
 print(resultat)
 print("La précédente valeur de l'object resultat a été supprimée et remplacée par la somme de A et B.")
 ```
+</details>
 
 5. Supprimer l'ensemble des objets des questions précédentes avec la fonction `rm()`.
 <details>
@@ -91,6 +95,7 @@ print("La précédente valeur de l'object resultat a été supprimée et remplac
 ```r
 rm(a,A,b,B,resultat)
 ```
+</details>
 
 ## Exercice 2 -  Fonctions usuelles
 
