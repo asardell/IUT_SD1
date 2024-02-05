@@ -125,7 +125,7 @@ iris[ c(100,103,105) , ]
 ```r
 iris[ 50:100 , ]
 ```
-</details
+</details>
 
 11.  Calculer la moyenne de la variable `Sepal.Length`.
 <details>
@@ -134,7 +134,7 @@ iris[ 50:100 , ]
 ```r
 mean(iris$Sepal.Length)
 ```
-</details
+</details>
 
 12.  Calculer la médiane de la variable `Sepal.Width`.
 <details>
@@ -143,7 +143,7 @@ mean(iris$Sepal.Length)
 ```r
 median(iris$Sepal.Length)
 ```
-</details
+</details>
 
 13.   Calculer l'écart-type de la variable `Petal.Length`.
 <details>
@@ -152,7 +152,7 @@ median(iris$Sepal.Length)
 ```r
 sd(iris$Petal.Length)
 ```
-</details
+</details>
 
 14.   Calculer les déciles de la variable `Petal.Width`.
 <details>
@@ -161,8 +161,7 @@ sd(iris$Petal.Length)
 ```r
 quantile(iris$Petal.Width, probs = seq(from = 0.1, to = 0.9, by =0.1))
 ```
-</details
-
+</details>
 
 ## Exercice 2 - Import/Exporter un dataframe
 
