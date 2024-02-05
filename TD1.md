@@ -483,7 +483,7 @@ Pour chaque question, représenter graphique l'échantillon aléatoire avec un h
 <summary>Correction</summary>
 
 ```r
-echantillon <- rnorm(n = 200, mean = -2, sd = 3)
+echantillon <- rnorm(n = 20, mean = -2, sd = 3)
 moyenne <- mean(echantillon)
 ecart_type <- sd(echantillon)
 print(paste("Moyenne : ", moyenne))
