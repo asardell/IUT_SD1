@@ -39,7 +39,7 @@ Voici les objectifs de ce TD :
 | Nom de Fonction | Description | Argument Pertinent | Exemple |
 |------------------|-------------|--------------------|---------|
 | `c()` | Concatène des vecteurs ou des valeurs pour créer un nouveau vecteur. |  | `nouveaux_vecteur <- c(vecteur1, vecteur2)` |
-| `rm()` | Supprime des objets (variables ou fonctions) de l'environnement. | | `rm(objet1, objet2)` |
+| `rm()` | Supprime des objets (variables ou fonctions) de l'environnement. | `list = ls()` supprime tous les objets | `rm(objet1, objet2)` |
 | `print()` | Affiche dans la console. | | `print(objet1)` |
 
 ### Exercice sur les Fonctions en R
@@ -94,6 +94,8 @@ print("La précédente valeur de l'object resultat a été supprimée et remplac
 
 ```r
 rm(a,A,b,B,resultat)
+#OU
+rm(list = ls())
 ```
 </details>
 
