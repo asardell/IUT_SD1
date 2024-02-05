@@ -41,6 +41,9 @@ Voici les objectifs de ce TD :
 | `c()` | Concatène des vecteurs ou des valeurs pour créer un nouveau vecteur. |  | `nouveaux_vecteur <- c(vecteur1, vecteur2)` |
 | `rm()` | Supprime des objets (variables ou fonctions) de l'environnement. | `list = ls()` supprime tous les objets | `rm(objet1, objet2)` |
 | `print()` | Affiche dans la console. | | `print(objet1)` |
+| `[ ]` | Accéder aux éléments d'un vecteur. | | `vecteur1[4]` |
+| `:` | Génère un séquence avec un pas de 1. | | `sequence <- 8:15` |
+| `[-1]` | Accèder à tous les éléments sauf ceux précisés. | | `vecteur1[-4]` |
 
 ### Exercice sur les Fonctions en R
 
