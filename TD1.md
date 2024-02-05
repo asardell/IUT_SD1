@@ -36,7 +36,7 @@ Voici les objectifs de ce TD :
 ## Exercice 1 - Les objets et les vecteurs
 
 ### Mémo
-| Nom de Fonction | Description | Argument Pertinent | Exemple |
+| Nom de la commande | Description | Argument Pertinent | Exemple |
 |------------------|-------------|--------------------|---------|
 | `c()` | Concatène des vecteurs ou des valeurs pour créer un nouveau vecteur. |  | `nouveaux_vecteur <- c(vecteur1, vecteur2)` |
 | `rm()` | Supprime des objets (variables ou fonctions) de l'environnement. | `list = ls()` supprime tous les objets | `rm(objet1, objet2)` |
