@@ -242,7 +242,7 @@ vecteur[-c(1,2)]
 
 ```r
 vecteur <- c(1, 2, NA, 4, 5)
-class_vecteur <- class(vecteur)
+class(vecteur)
 ```
 </details>
 
@@ -255,8 +255,8 @@ class_vecteur <- class(vecteur)
 <summary>Correction</summary>
 
 ```r
-seq <- seq(from = 1, to = 10)
-lenght(seq)
+ma_sequence <- seq(from = 1, to = 10)
+length(ma_sequence)
 ```
 </details>
 
@@ -265,8 +265,8 @@ lenght(seq)
 <summary>Correction</summary>
 
 ```r
-seq <- seq(from = 2, to = 20, by = 2)
-lenght(seq)
+ma_sequence <- seq(from = 2, to = 20, by = 2)
+length(ma_sequence)
 ```
 </details>
 
@@ -275,8 +275,8 @@ lenght(seq)
 <summary>Correction</summary>
 
 ```r
-seq <- seq(from = 0, to = -5)
-lenght(seq)
+ma_sequence <- seq(from = 0, to = -5)
+length(ma_sequence)
 ```
 </details>
 
@@ -285,8 +285,8 @@ lenght(seq)
 <summary>Correction</summary>
 
 ```r
-seq <- seq(from = 5, to = 50, by = 5)
-lenght(seq)
+ma_sequence <- seq(from = 5, to = 50, by = 5)
+length(ma_sequence)
 ```
 </details>
 
@@ -295,8 +295,8 @@ lenght(seq)
 <summary>Correction</summary>
 
 ```r
-seq <- seq(from = 10, to = 1, by = -1)
-lenght(seq)
+ma_sequence <- seq(from = 10, to = 1, by = -1)
+length(ma_sequence)
 ```
 </details>
 
@@ -305,8 +305,8 @@ lenght(seq)
 <summary>Correction</summary>
 
 ```r
-seq <- seq(from = 0, to = 1, by = 0.1)
-lenght(seq)
+ma_sequence <- seq(from = 0, to = 1, by = 0.1)
+length(ma_sequence)
 ```
 </details>
 
@@ -315,8 +315,8 @@ lenght(seq)
 <summary>Correction</summary>
 
 ```r
-seq <- seq(from = 5, to = -5, by = -1)
-lenght(seq)
+ma_sequence <- seq(from = 5, to = -5, by = -1)
+length(ma_sequence)
 ```
 </details>
 
@@ -325,8 +325,8 @@ lenght(seq)
 <summary>Correction</summary>
 
 ```r
-seq <- seq(from = 1, to = 10, by = 2)
-lenght(seq)
+ma_sequence <- seq(from = 1, to = 10, by = 2)
+length(ma_sequence)
 ```
 </details>
 
