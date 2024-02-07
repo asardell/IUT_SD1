@@ -313,7 +313,7 @@ nrow(extraction3)
 <summary>Correction</summary>
 
 ```r
-extraction4 <- subset(dfManga, Vote >= 7 & Vote <= 8)
+extraction4 <- subset(dfManga, Score >= 7 & Score <= 8)
 nrow(extraction4)
 ```
 </details>
