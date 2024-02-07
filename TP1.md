@@ -298,7 +298,7 @@ nrow(extraction2)
 ```
 </details>
 
-3. Combien de Manga ont strictement plus de 200000 votes et plus de 8/20 ?
+3. Combien de Manga ont strictement plus de 200000 votes et plus de 8/10 ?
 <details>
 <summary>Correction</summary>
 
