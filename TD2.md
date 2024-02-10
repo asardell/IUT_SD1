@@ -8,7 +8,7 @@ Voici les objectifs de ce TD :
 - [ ] Sélection et filtre sur un dataframe
 - [ ] Trier un dataframe 
 
-La compétition de sur Mario Kart est un sport où chaque détail compte. La performance d'un kart dépend non seulement de la capacité de conduite du pilote, mais aussi de la configuration et de la composition du kart lui-même. Dans ce TD, nous allons explorer comment les données statistiques peuvent être utilisées pour optimiser la composition d'un kart, en se basant sur des [données réelles disponible ici](https://www.mariowiki.com/Mario_Kart_8_Deluxe_in-game_statistics).
+La compétition de sur Mario Kart est un sport où chaque détail compte. La performance d'un kart dépend non seulement de la capacité de conduite du pilote, mais aussi de la configuration et de la composition du kart lui-même. Dans ce TD, nous allons explorer comment les données statistiques peuvent être utilisées pour optimiser la composition d'un kart, en se basant sur des [données réelles](https://www.mariowiki.com/Mario_Kart_8_Deluxe_in-game_statistics).
 
 :warning: L'ensemble des exercices sont à réaliser dans un seul script nommé `iut_sd1_r_td2`
 
