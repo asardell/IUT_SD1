@@ -1,6 +1,6 @@
 # TP1
 
-![](./img/img1.jpg)
+<img src="./img/img1.jpg" alt="" style="height: 200px;">
 
 ## Objectifs
 Voici les objectifs de ce TD :
