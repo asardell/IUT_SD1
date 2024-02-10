@@ -1,6 +1,6 @@
 # TP1
 
-![]("./img/img1.jpg")
+![](./img/img1.jpg)
 
 ## Objectifs
 Voici les objectifs de ce TD :
