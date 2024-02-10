@@ -17,7 +17,7 @@ La compétition de sur Mario Kart est un sport où chaque détail compte. La per
 ### Mémo
 | Nom de la commande | Description | Argument Pertinent | Exemple |
 |-------------------|-------------|--------------------|---------|
-| `read.csv()` | Lit un fichier CSV et retourne un dataframe. | `file` : le chemin ou l'URL du fichier CSV à lire, `header` : spécifie si la première ligne contient les noms des variables (par défaut TRUE), `dec` : le caractère utilisé pour indiquer le point décimal (par défaut "."), `sep` : le séparateur de champ (par défaut ",", pour les tabulations `\t`). | `donnees <- read.csv("fichier.csv", header = TRUE, dec = ",", sep = ";")` |
+| `read.csv()` | Lit un fichier CSV et retourne un dataframe. | `file` : le chemin ou l'URL du fichier CSV à lire, `header` : spécifie si la première ligne contient les noms des variables (par défaut TRUE), `dec` : le caractère utilisé pour indiquer le point décimal (par défaut "."), `sep` : le séparateur de champ (par défaut ",", pour les tabulations `"\t"`). | `donnees <- read.csv("fichier.csv", header = TRUE, dec = ",", sep = ";")` |
 | `getwd()` | Retourne le répertoire de travail actuel. | | `current_dir <- getwd()` |
 | `setwd()` | Change le répertoire de travail actuel. | `dir` : le chemin du nouveau répertoire de travail | `setwd("/chemin/vers/le/nouveau/repertoire")` |
 
