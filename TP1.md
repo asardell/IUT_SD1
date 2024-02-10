@@ -438,7 +438,11 @@ write.table(x = dfConcat, file = ".../.../.../ExportTp1.csv",
 </details>
 
 
+## Liens utiles
 
+Voici quelques liens utiles :
+
+- [Cours sur la programmation R](https://asardell.github.io/programmation-r/)
 
 
 

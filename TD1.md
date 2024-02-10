@@ -686,3 +686,10 @@ sort(frequence, decreasing = TRUE)
 print("Oui, d'après la loi des grands nombres, les probabilités d'obtenir chacune des faces se rapprochent des probabilités théoriques.")
 ```
 </details>
+
+
+## Liens utiles
+
+Voici quelques liens utiles :
+
+- [Cours sur la programmation R](https://asardell.github.io/programmation-r/)
