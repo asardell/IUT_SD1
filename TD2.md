@@ -1,4 +1,4 @@
-# TP1
+# TD2
 
 <img src="./img/img1.jpg" alt="" style="height: 200px;">
 
@@ -26,7 +26,15 @@ La compétition de sur Mario Kart est un sport où chaque détail compte. La per
 
 #### Les fonctions `getwd()`,`setwd()` et `read.csv()`.
 
-1. Afficher le répertoire courant par défaut de votre session RStudio avec la fonction `getwd()`.
+"bodies_karts.csv", header = TRUE, sep = ";", dec = ",")
+tires = read.csv(file = "tires.csv", header = TRUE, sep = "\t", dec = ",")
+gliders = read.csv(file = "gliders.csv", header = TRUE, sep = "|", dec = ",")
+drivers = read.csv(file = "drivers.csv",
+
+1. Télécharger les jeux de données (`bodies_karts.csv`, `tires.csv`, `gliders.csv` et `drivers.csv`) disponible [ici](./dataset) puis les mettre dans un même dossier appelé `dataset`.
+
+
+2. Afficher le répertoire courant par défaut de votre session RStudio avec la fonction `getwd()`.
 <details>
 <summary>Correction</summary>
 
@@ -35,7 +43,7 @@ getwd()
 ```
 </details>
 
-2. Changer le répertoire courant par défaut de votre session RStudio avec la fonction `setwd()` pour pointer sur le dossier avec vos datasets. Puis vérifier le bon changement du répertoire avec la fonction `getwd()`.
+3. Changer le répertoire courant par défaut de votre session RStudio avec la fonction `setwd()` pour pointer sur le dossier avec vos datasets. Puis vérifier le bon changement du répertoire avec la fonction `getwd()`.
 <details>
 <summary>Correction</summary>
 
@@ -47,7 +55,7 @@ getwd()
 
 :warning: Il est possible de faire exactement la même chose avec le raccourci clavier `CTRL` + `SHIFT` + `H`.
 
-3. L'intérêt de changer de répertoire est de ne pas être obliger de renseigner tout le chemin d'un fichier à importer. Uniquement le nom du fichier est ainsi suffisant. Importer les datasets avec la fonction `read.csv()`.
+4. L'intérêt de changer de répertoire est de ne pas être obliger de renseigner tout le chemin d'un fichier à importer. Uniquement le nom du fichier est ainsi suffisant. Importer les datasets avec la fonction `read.csv()`.
 
 :warning: Pensez à ouvrir le fichier avec un bloc note pour prendre connaissance de sa configuration et ainsi bien paramétrer les arguments de la fonction `read.csv()`.
 
@@ -63,21 +71,43 @@ drivers = read.csv(file = "drivers.csv", header = TRUE, sep = ";", dec = ",")
 </details>
 
 
+...
 
 
-## Exercice 2 - xxx
+## Exercice 2 - Statistique
 
-### Mémo
-
-
-### Exercice sur les Fonctions en R
-
-## Exercice 3 - xxxx
-
-### Mémo
 
 
 ### Exercice sur les Fonctions en R
+
+1. xxxxx
+
+<details>
+<summary>Correction</summary>
+
+```r
+```
+</details>
+
+## Exercice 3 - Manipulation de data frame
+
+### Mémo
+| Nom de la commande | Description | Argument Pertinent | Exemple |
+|-------------------|-------------|--------------------|---------|
+| `order()` | Trie les éléments d'un vecteur et retourne les indices dans l'ordre croissant ou décroissant. | `x` : le vecteur à trier, `decreasing` : spécifie si le tri doit être effectué dans l'ordre décroissant (par défaut FALSE). | `indices_tri <- order(vecteur, decreasing = FALSE)` |
+| `[ , ]` | Indexe un dataframe au niveau des lignes et des colonnes. | `row_index` : index ou condition pour sélectionner les lignes, `col_index` : index ou noms de colonnes pour sélectionner les colonnes. | `donnees_subset <- donnees[1:10, c("colonne1", "colonne2")]` |
+| `[ - , ]` | Indexation inverse, exclut les lignes ou colonnes spécifiées. | `row_index` : index ou condition pour exclure les lignes, `col_index` : index ou noms de colonnes pour exclure les colonnes. | `donnees_sans_colonne3 <- donnees[, -3]` |
+
+### Exercice sur les Fonctions en R
+
+1. xxxxx
+
+<details>
+<summary>Correction</summary>
+
+```r
+```
+</details>
 
 ## Liens utiles
 
