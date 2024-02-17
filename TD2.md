@@ -26,11 +26,6 @@ La compétition de sur Mario Kart est un sport où chaque détail compte. La per
 
 #### Les fonctions `getwd()`,`setwd()` et `read.csv()`.
 
-"bodies_karts.csv", header = TRUE, sep = ";", dec = ",")
-tires = read.csv(file = "tires.csv", header = TRUE, sep = "\t", dec = ",")
-gliders = read.csv(file = "gliders.csv", header = TRUE, sep = "|", dec = ",")
-drivers = read.csv(file = "drivers.csv",
-
 1. Télécharger les jeux de données (`bodies_karts.csv`, `tires.csv`, `gliders.csv` et `drivers.csv`) disponible [ici](./dataset) puis les mettre dans un même dossier appelé `dataset`.
 
 
@@ -65,33 +60,194 @@ getwd()
 ```r
 bodies_karts = read.csv(file = "bodies_karts.csv", header = TRUE, sep = ";", dec = ",")
 tires = read.csv(file = "tires.csv", header = TRUE, sep = "\t", dec = ",")
-gliders = read.csv(file = "gliders.csv", header = TRUE, sep = "|", dec = ",")
+gliders = read.csv(file = "gliders.csv", header = TRUE, sep = "|", dec = ".")
 drivers = read.csv(file = "drivers.csv", header = TRUE, sep = ";", dec = ",")
 ```
 </details>
 
-
-...
-
-
-## Exercice 2 - Statistique
-
-
-
-### Exercice sur les Fonctions en R
-
-1. xxxxx
+5. Pour chaque dataset, afficher la dimension (ligne/colonne) du dataframe.
 
 <details>
 <summary>Correction</summary>
 
 ```r
+dim(bodies_karts)
+dim(tires)
+dim(gliders)
+dim(drivers)
 ```
 </details>
+
+
+## Exercice 2 - Statistique
+
+### Mémo
+
+| Nom de la commande | Description | Argument Pertinent | Exemple |
+|-------------------|-------------|--------------------|---------|
+| `cor()` | Calcule la corrélation entre deux vecteurs. | `x` : le premier vecteur, `y` : le deuxième vecteur, `method` : la méthode de calcul de la corrélation (par défaut "pearson"). | `correlation <- cor(x = vecteur1, y = vecteur2, method = "spearman")` |
+| `plot()` | Trace un nuage de points entre deux vecteurs. | `x` : le premier vecteur, `y` : le deuxième vecteur, `xlab` : étiquette de l'axe des abscisses, `ylab` : étiquette de l'axe des ordonnées, `main` : titre du graphique. | `plot(vecteur1, vecteur2, xlab = "Variable X", ylab = "Variable Y", main = "Nuage de points")` |
+| `cov()` | Calcule la covariance entre deux vecteurs. | `x` : le premier vecteur, `y` : le deuxième vecteur. | `covariance <- cov(x = vecteur1, y = vecteur2)` |
+| `install.packages()` | Installe un package R depuis un dépôt CRAN ou local. | `pkgs` : le nom du package à installer, `repos` : l'URL du dépôt, `dependencies` : spécifie si les dépendances doivent également être installées (par défaut TRUE). | `install.packages("nom_du_package")` |
+| `library()` | Charge un package R déjà installé en mémoire pour être utilisé dans la session R courante. | `package` : le nom du package à charger. | `library(nom_du_package)` |
+
+### Exercice sur les Fonctions en R
+
+1. Pour chaque dataset, effectuer un résumé des données avec la fonction adaptée.
+
+<details>
+<summary>Correction</summary>
+
+```r
+summary(bodies_karts)
+summary(tires)
+summary(gliders)
+summary(drivers)
+```
+</details>
+
+2. Représenter graphiquement dans un nuage de points le lien entre les statistiques des drivers sur `Weight` et `Acceleration`. Commenter le lien entre ces deux variables ? Pourquoi il n'y a pas autant de points que de drivers ?
+
+
+<details>
+<summary>Correction</summary>
+
+```r
+plot(x = drivers$Weight,
+     y = drivers$Acceleration, 
+     main = "Drivers : Weight / Acceleration")
+#Il semble que les deux variables soient corrélées négativement
+#Il y a autant de points mais ils sont superposés car certains drivers ont les mêmes statistiques
+```
+</details>
+
+3. Calculer le coefficient de corrélation de cette relation avec la fonction `cor()`.
+
+<details>
+<summary>Correction</summary>
+
+```r
+cor(x = drivers$Weight,
+    y = drivers$Acceleration)
+```
+</details>
+
+4. Vérifier ce résultat en calculant vous même le coéfficient de corrélation. Retrouver la [formule ici](https://fr.wikipedia.org/wiki/Corr%C3%A9lation_(statistiques)#Coefficient_de_corr%C3%A9lation_lin%C3%A9aire_de_Bravais-Pearson).
+
+<details>
+<summary>Correction</summary>
+
+```r
+covXY = cov(x = drivers$Weight,
+    y = drivers$Acceleration)
+sX = sd(drivers$Weight)
+sY = sd(drivers$Acceleration)
+print(covXY / (sX*sY))
+```
+</details>
+
+5. Calculer le coefficient de détermination de cette même relation.
+
+<details>
+<summary>Correction</summary>
+
+```r
+coefCorr = cor(x = drivers$Weight,
+    y = drivers$Acceleration)
+coefDeter = coefCorr^2
+print(coefDeter)
+```
+</details>
+
+
+6. Construire la matrice des corrélations des *variables quantitatives* de statistiques des `drivers` avec la fonction `cor()`. Afficher cette matrice dans une vue et arrondisser les valeurs avec deux décimales uniquements. Qu'observez vous ? 
+
+<details>
+<summary>Correction</summary>
+
+```r
+matriceCor = cor(drivers[ , - 1])
+matriceCor = round(matriceCor , 2)
+View(matriceCor)
+#Toutes les variables semblent fortement corrélées entre elles.
+```
+</details>
+
+
+7. Pour mieux visualiser ces corrélations, nous allons utiliser un package qui ne fait pas parti des packages par défaut. Installer le package `corrplot` avec la fonction `install.packages()`
+
+<details>
+<summary>Correction</summary>
+
+```r
+#commande à executer qu'une seule fois
+install.packages("corrplot")
+```
+</details>
+
+8. Construire une Corrélogramme avec la fonction `corrplot()` ([plus d'info ici](http://www.sthda.com/french/wiki/visualiser-une-matrice-de-correlation-par-un-correlogramme#correlogramme-visualisation-de-la-matrice-de-correlation)).
+
+<details>
+<summary>Correction</summary>
+
+```r
+library(corrplot) #je charge mon package pour pouvoir utiliser ses fonctionalités
+corrplot(matriceCor, method="circle")
+```
+</details>
+
+9. Construire une Corrélogramme pour les 3 autres datasets. Pour chaque dataset, quelle est la relation avec le lien le plus fort ? le lien le moins fort ?[Plus d'info ici](http://www.sthda.com/french/wiki/visualiser-une-matrice-de-correlation-par-un-correlogramme#personnaliser-le-correlogramme).
+
+<details>
+<summary>Correction</summary>
+
+Pour `tires` dataset :
+
+```r
+matriceCor = round(cor(tires[ , - 1]),1)
+corrplot(matriceCor, method="color",  
+         type="upper", order="hclust", 
+         addCoef.col = "black", # Ajout du coefficient de corrélation
+         tl.col="black", tl.srt=45, #Rotation des étiquettes de textes
+         # Cacher les coefficients de corrélation sur la diagonale
+         diag=FALSE 
+         )
+```
+</details>
+
+Pour `bodies_karts` dataset :
+
+```r
+matriceCor = round(cor(bodies_karts[ , - 1]),1)
+corrplot(matriceCor, method="color",  
+         type="upper", order="hclust", 
+         addCoef.col = "black", # Ajout du coefficient de corrélation
+         tl.col="black", tl.srt=45, #Rotation des étiquettes de textes
+         # Cacher les coefficients de corrélation sur la diagonale
+         diag=FALSE 
+         )
+```
+</details>
+
+Pour `gliders` dataset :
+
+```r
+matriceCor = round(cor(gliders[ , - 1]),1)
+corrplot(matriceCor, method="color",  
+         type="upper", order="hclust", 
+         addCoef.col = "black", # Ajout du coefficient de corrélation
+         tl.col="black", tl.srt=45, #Rotation des étiquettes de textes
+         # Cacher les coefficients de corrélation sur la diagonale
+         diag=FALSE 
+         )
+```
+</details>
+
 
 ## Exercice 3 - Manipulation de data frame
 
 ### Mémo
+
 | Nom de la commande | Description | Argument Pertinent | Exemple |
 |-------------------|-------------|--------------------|---------|
 | `order()` | Trie les éléments d'un vecteur et retourne les indices dans l'ordre croissant ou décroissant. | `x` : le vecteur à trier, `decreasing` : spécifie si le tri doit être effectué dans l'ordre décroissant (par défaut FALSE). | `indices_tri <- order(vecteur, decreasing = FALSE)` |
@@ -99,6 +255,8 @@ drivers = read.csv(file = "drivers.csv", header = TRUE, sep = ";", dec = ",")
 | `[ - , ]` | Indexation inverse, exclut les lignes ou colonnes spécifiées. | `row_index` : index ou condition pour exclure les lignes, `col_index` : index ou noms de colonnes pour exclure les colonnes. | `donnees_sans_colonne3 <- donnees[, -3]` |
 
 ### Exercice sur les Fonctions en R
+
+top flop, creation de dataframe et colonnes sum
 
 1. xxxxx
 
