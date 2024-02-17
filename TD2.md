@@ -17,7 +17,7 @@ La compétition de sur Mario Kart est un sport où chaque détail compte. La per
 ### Mémo
 | Nom de la commande | Description | Argument Pertinent | Exemple |
 |-------------------|-------------|--------------------|---------|
-| `read.csv()` | Lit un fichier CSV et retourne un dataframe. | `file` : le chemin ou l'URL du fichier CSV à lire, `header` : spécifie si la première ligne contient les noms des variables (par défaut TRUE), `dec` : le caractère utilisé pour indiquer le point décimal (par défaut "."), `sep` : le séparateur de champ (par défaut ",", pour les tabulations `"\t"`). | `donnees <- read.csv("fichier.csv", header = TRUE, dec = ",", sep = ";")` |
+| `read.csv()` | Lit un fichier CSV et retourne un dataframe. | `file` : le chemin ou l'URL du fichier CSV à lire, `header` : spécifie si la première ligne contient les noms des variables (par défaut TRUE), `dec` : le caractère utilisé pour indiquer le point décimal (par défaut `"."`), `sep` : le séparateur de champ (par défaut `","`, pour les tabulations `"\t"`). | `donnees <- read.csv("fichier.csv", header = TRUE, dec = ",", sep = ";")` |
 | `getwd()` | Retourne le répertoire de travail actuel. | | `current_dir <- getwd()` |
 | `setwd()` | Change le répertoire de travail actuel. | `dir` : le chemin du nouveau répertoire de travail | `setwd("/chemin/vers/le/nouveau/repertoire")` |
 
@@ -187,6 +187,8 @@ install.packages("corrplot")
 
 8. Construire une Corrélogramme avec la fonction `corrplot()` ([plus d'info ici](http://www.sthda.com/french/wiki/visualiser-une-matrice-de-correlation-par-un-correlogramme#correlogramme-visualisation-de-la-matrice-de-correlation)).
 
+:warning: La fonction à utiliser a le même nom que le package.
+
 <details>
 <summary>Correction</summary>
 
@@ -197,6 +199,8 @@ corrplot(matriceCor, method="circle")
 </details>
 
 9. Construire une Corrélogramme pour les 3 autres datasets. Pour chaque dataset, quelle est la relation avec le lien le plus fort ? le lien le moins fort ?[Plus d'info ici](http://www.sthda.com/french/wiki/visualiser-une-matrice-de-correlation-par-un-correlogramme#personnaliser-le-correlogramme).
+
+:warning: La fonction `cor()` ne fonctionne que sur des variables quantitatives.
 
 <details>
 <summary>Correction</summary>
@@ -213,7 +217,6 @@ corrplot(matriceCor, method="color",
          diag=FALSE 
          )
 ```
-</details>
 
 Pour `bodies_karts` dataset :
 
@@ -227,7 +230,6 @@ corrplot(matriceCor, method="color",
          diag=FALSE 
          )
 ```
-</details>
 
 Pour `gliders` dataset :
 
@@ -256,14 +258,163 @@ corrplot(matriceCor, method="color",
 
 ### Exercice sur les Fonctions en R
 
-top flop, creation de dataframe et colonnes sum
 
-1. xxxxx
+1. Créer un object `resultat` avec uniquement le nom du `Driver` et son `Weight`.
 
 <details>
 <summary>Correction</summary>
 
 ```r
+resultat = drivers[ , c("Driver" , "Weight")]
+View(resultat)
+```
+</details>
+
+2. Créer un object `resultat` avec uniquement le nom du `Driver` et son `Acceleration` sur les 10 premières lignes.
+
+<details>
+<summary>Correction</summary>
+
+```r
+resultat = drivers[ 1:10 , c("Driver" , "Acceleration")]
+View(resultat)
+```
+</details>
+
+3. Créer un object `resultat`sans les colonnes 5, 7 et 9.
+
+<details>
+<summary>Correction</summary>
+
+```r
+resultat = drivers[ , -c(5,7,9)]
+View(resultat)
+```
+</details>
+
+4. Créer un object `resultat`sans les colonnes `Weight` et `Acceleration`.
+
+<details>
+<summary>Correction</summary>
+
+```r
+resultat = drivers[ , -c("Weight","Acceleration")] #cela fonctionne uniquement sur des index numériques.
+resultat = drivers[ , -c(2,3)]
+```
+</details>
+
+:warning: Malheureusement, il n'est pas possible d'utiliser les `-` sur des index non numérique. Nous verrons comment contourner cela dans un prochain cours.
+
+5. Créer un object `resultat` avec uniquement les colonnes `Driver`, `Acceleration` et `Weight` dans cet ordre. Que remarquez-vous ?
+
+<details>
+<summary>Correction</summary>
+
+```r
+resultat = drivers[ , c("Driver", "Acceleration", "Weight")]
+View(resultat)
+#Les colonnes sont dans l'ordre défini par le vecteur.
+```
+</details>
+
+6. Créer un object `resultat` avec uniquement les `Driver` 3 , 12 et 32 dans cet ordre.
+
+<details>
+<summary>Correction</summary>
+
+```r
+resultat = drivers[ c(3,12,32) , ]
+View(resultat)
+```
+</details>
+
+7. Créer un object `resultat` avec uniquement les `Driver` 32 , 3 , 12 dans cet ordre. Que remarquez-vous ?
+
+<details>
+<summary>Correction</summary>
+
+```r
+resultat = drivers[ c(32,3,12) , ]
+View(resultat)
+#Les lignes sont dans l'ordre défini par le vecteur.
+```
+</details>
+
+8. Créer un object `resultat` avec uniquement les colonnes `Driver` et `Weight` en triant les conducteurs du plus léger au plus lourd avec la fonction `order()`.
+
+<details>
+<summary>Correction</summary>
+
+```r
+rang = order(drivers$Weight)
+resultat = drivers[ rang  , c("Driver", "Weight") ]
+View(resultat)
+```
+</details>
+
+9. Créer un object `resultat` avec uniquement les colonnes `Driver` et `Acceleration` en triant les conducteurs du plus rapide au moins rapide.
+
+<details>
+<summary>Correction</summary>
+
+```r
+rang = order(drivers$Acceleration, decreasing = TRUE)
+resultat = drivers[ rang  , c("Driver", "Acceleration") ]
+View(resultat)
+```
+</details>
+
+10. Créer un object `resultat` avec les colonnes `Driver`, `Weight` et `Acceleration` en triant les conducteurs du plus rapide au moins rapide **puis** du plus léger au plus lourd.
+
+<details>
+<summary>Correction</summary>
+
+```r
+rang = order(drivers$Acceleration, drivers$Weight, decreasing = c(TRUE,FALSE))
+resultat = drivers[ rang  , c("Driver", "Acceleration","Weight") ]
+View(resultat)
+```
+</details>
+
+## Exercice 4 - GOAT
+
+Nous voulons déterminer la combinaison de `bodies_karts`, `tires`, `gliders` et `drivers` qui permet d'obtenir le plus d'`Acceleration`.
+
+1. Créer un object `topDriver` avec les colonnes `Driver` et `Acceleration` avec le ou les conducteurs avec la plus grande `Acceleration`.
+
+<details>
+<summary>Correction</summary>
+
+```r
+help(subset)
+topDriver = subset(x = drivers,
+                   subset = Acceleration == max(Acceleration), 
+                   select = c("Driver","Acceleration"))
+```
+:warning: Dans la fonction `subset()` il n'est pas nécessaire de mentionner `drivers$...` car le dataframe utilisé est déjà mentionné dans l'argument `x`.
+
+</details>
+
+
+2. Créer un object `topGlider`, `topTires` et `topBody` avec la même logique de conserver uniquement les meilleurs statistiques d'`Acceleration`.
+
+<details>
+<summary>Correction</summary>
+
+```r
+topGlider = subset(x = gliders,
+                   subset = Acceleration == max(Acceleration), 
+                   select = c("Glider","Acceleration"))
+```
+```r
+topTires = subset(x = tires,
+                   subset = Acceleration == max(Acceleration), 
+                   select = c("Tire","Acceleration"))
+```
+```r
+topBody = subset(x = bodies_karts,
+                   subset = Acceleration == max(Acceleration), 
+                   select = c("Body","Acceleration"))
 ```
 </details>
 
