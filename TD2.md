@@ -243,6 +243,10 @@ corrplot(matriceCor, method="color",
          diag=FALSE 
          )
 ```
+
+:warning: On remarque une erreur liée à la variable `Ground.Handling` car tous les gliders ont la même valeur. Il n'est donc pas possible de calculer le coefficient de corrélation car l'écart-type de cette variable est nul.
+
+
 </details>
 
 
