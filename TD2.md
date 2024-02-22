@@ -279,7 +279,7 @@ corrplot(matriceCor, method="color",
 
 ### Exercice sur les Fonctions en R
 
-#### Les fonctions `order()`.
+#### La fonction `order()`.
 
 1. Créer un object `resultat` avec uniquement le nom du `Driver` et son `Weight`.
 
