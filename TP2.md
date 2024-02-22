@@ -22,7 +22,7 @@ Pour ce TP, on utilise le fichier `fao.csv` qui présente la production, l’imp
 Voici une description des données :
 
 - `Nom` : Nom du pays
-- `Dispo_alim` : Disponibilité alimentaire totale (en Kcal/personne/jour) en 2020
+- `Dispo_alim` : Disponibilité alimentaire moyenne (en Kcal/personne/jour) en 2020
 - `Prod_viande` : Production de viande en milliers de tonnes en 2020
 - `Import_viande` : Importations de viande en milliers de tonnes en 2020
 - `Export_viande` : Exportations de viande en milliers de tonnes en 2020
@@ -66,7 +66,7 @@ Voici une description des données :
 ```
 </details>
 
-2. Quelle est le nombre d’habitant dans le monde ?
+2. Quel est le nombre d’habitant dans le monde ?
 <details>
 <summary>Correction</summary>
 
@@ -74,7 +74,7 @@ Voici une description des données :
 ```
 </details>
 
-3. Quelle est l’écart-type du volume des exportations et importations de viande.
+3. Quel est l’écart-type du volume des exportations de viande ? Et des importations de viande ?
 <details>
 <summary>Correction</summary>
 
