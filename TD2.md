@@ -8,6 +8,21 @@ Voici les objectifs de ce TD :
 - [ ] Sélection et filtre sur un dataframe
 - [ ] Trier un dataframe 
 
+1. [TD2](#td2)
+   1. [Objectifs](#objectifs)
+   2. [Exercice 1 - Importer des données](#exercice-1---importer-des-données)
+      1. [Mémo](#mémo)
+      2. [Exercice sur les Fonctions en R](#exercice-sur-les-fonctions-en-r)
+         1. [Les fonctions `getwd()`,`setwd()` et `read.csv()`.](#les-fonctions-getwdsetwd-et-readcsv)
+   3. [Exercice 2 - Statistique](#exercice-2---statistique)
+      1. [Mémo](#mémo-1)
+      2. [Exercice sur les Fonctions en R](#exercice-sur-les-fonctions-en-r-1)
+   4. [Exercice 3 - Manipulation de data frame](#exercice-3---manipulation-de-data-frame)
+      1. [Mémo](#mémo-2)
+      2. [Exercice sur les Fonctions en R](#exercice-sur-les-fonctions-en-r-2)
+   5. [Exercice 4 - GOAT](#exercice-4---goat)
+   6. [Liens utiles](#liens-utiles)
+
 La compétition de sur Mario Kart est un sport où chaque détail compte. La performance d'un kart dépend non seulement de la capacité de conduite du pilote, mais aussi de la configuration et de la composition du kart lui-même. Dans ce TD, nous allons explorer comment les données statistiques peuvent être utilisées pour optimiser la composition d'un kart, en se basant sur des [données réelles](https://www.mariowiki.com/Mario_Kart_8_Deluxe_in-game_statistics).
 
 :warning: L'ensemble des exercices sont à réaliser dans un seul script nommé `iut_sd1_r_td2`

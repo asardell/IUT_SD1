@@ -55,12 +55,20 @@ Voici quelques liens utiles :
 
 | Nom de la commande | Description | Argument Pertinent | Exemple |
 |------------------|-------------|--------------------|---------|
-| `c()` | Concatène des vecteurs ou des valeurs pour créer un nouveau vecteur. |  | `nouveaux_vecteur <- c(vecteur1, vecteur2)` |
-| `rm()` | Supprime des objets (variables ou fonctions) de l'environnement. | `list = ls()` supprime tous les objets | `rm(objet1, objet2)` |
-| `print()` | Affiche dans la console. | | `print(objet1)` |
+| `$` | Accéder à une colonne d'un dataframe | | `df$colonneA` |
+| `[ , ]` | Accéder à certaines lignes et/ou colonnes d'un datarame. | | `dfExtraction <- df[ c(5,6), c("colonneB", "colonneD")]` |
 | `[ ]` | Accéder aux éléments d'un vecteur. | | `vecteur1[4]` |
 | `:` | Génère un séquence avec un pas de 1. | | `sequence <- 8:15` |
 | `[-1]` | Accèder à tous les éléments sauf ceux précisés. | | `vecteur1[-4]` |
+| `[ , ]` | Indexe un dataframe au niveau des lignes et des colonnes. | `row_index` : index ou condition pour sélectionner les lignes, `col_index` : index ou noms de colonnes pour sélectionner les colonnes. | `donnees_subset <- donnees[1:10, c("colonne1", "colonne2")]` |
+| `[ - , ]` | Indexation inverse, exclut les lignes ou colonnes spécifiées. | `row_index` : index ou condition pour exclure les lignes, `col_index` : index ou noms de colonnes pour exclure les colonnes. | `donnees_sans_colonne3 <- donnees[, -3]` |
+
+
+| Nom de la fonction | Description | Argument Pertinent | Exemple |
+|------------------|-------------|--------------------|---------|
+| `c()` | Concatène des vecteurs ou des valeurs pour créer un nouveau vecteur. |  | `nouveaux_vecteur <- c(vecteur1, vecteur2)` |
+| `rm()` | Supprime des objets (variables ou fonctions) de l'environnement. | `list = ls()` supprime tous les objets | `rm(objet1, objet2)` |
+| `print()` | Affiche dans la console. | | `print(objet1)` |
 | `seq()` | Génère une séquence de nombres. | `from`, `to`, `by` spécifiant le début, la fin et l'incrément. | `sequence <- seq(1, 10, by = 2)` |
 | `rep()` | Répète les éléments d'un vecteur plusieurs fois. | `times` spécifiant le nombre de répétitions. | `replication <- rep(5, times = 5)` |
 | `length()` | Retourne la longueur d'un vecteur. |  | `longueur <- length(vecteur)` |
@@ -98,3 +106,11 @@ Voici quelques liens utiles :
 | `subset()` | Retourne un sous-ensemble d'un objet (par exemple, un dataframe) en fonction de certaines conditions. | `x` : l'objet à sous-ensemble, `subset` : la condition de sous-ensemble. | `sous_ensemble <- subset(dataframe, condition)` |
 | `write.table()` | Écrit un objet (par exemple, un dataframe) dans un fichier texte ou CSV. | `x` : l'objet à écrire, `file` : le nom du fichier de sortie, `sep` : le séparateur de champ (par défaut " "), `row.names` : spécifie si les noms de lignes doivent être inclus (par défaut TRUE). | `write.table(dataframe, file = "output.csv", sep = ",", row.names = FALSE)` |
 | `rbind()` | Ajoute des lignes à un dataframe existant en les liant par les colonnes. | `nouveau_dataframe <- rbind(dataframe1, dataframe2)` |
+| `getwd()` | Retourne le répertoire de travail actuel. | | `current_dir <- getwd()` |
+| `setwd()` | Change le répertoire de travail actuel. | `dir` : le chemin du nouveau répertoire de travail | `setwd("/chemin/vers/le/nouveau/repertoire")` |
+| `cor()` | Calcule la corrélation entre deux vecteurs. | `x` : le premier vecteur, `y` : le deuxième vecteur, `method` : la méthode de calcul de la corrélation (par défaut "pearson"). | `correlation <- cor(x = vecteur1, y = vecteur2, method = "spearman")` |
+| `plot()` | Trace un nuage de points entre deux vecteurs. | `x` : le premier vecteur, `y` : le deuxième vecteur, `xlab` : étiquette de l'axe des abscisses, `ylab` : étiquette de l'axe des ordonnées, `main` : titre du graphique. | `plot(vecteur1, vecteur2, xlab = "Variable X", ylab = "Variable Y", main = "Nuage de points")` |
+| `cov()` | Calcule la covariance entre deux vecteurs. | `x` : le premier vecteur, `y` : le deuxième vecteur. | `covariance <- cov(x = vecteur1, y = vecteur2)` |
+| `install.packages()` | Installe un package R depuis un dépôt CRAN ou local. | `pkgs` : le nom du package à installer, `repos` : l'URL du dépôt, `dependencies` : spécifie si les dépendances doivent également être installées (par défaut TRUE). | `install.packages("nom_du_package")` |
+| `library()` | Charge un package R déjà installé en mémoire pour être utilisé dans la session R courante. | `package` : le nom du package à charger. | `library(nom_du_package)` |
+| `order()` | Trie les éléments d'un vecteur et retourne les indices dans l'ordre croissant ou décroissant. | `x` : le vecteur à trier, `decreasing` : spécifie si le tri doit être effectué dans l'ordre décroissant (par défaut FALSE). | `indices_tri <- order(vecteur, decreasing = FALSE)` |
