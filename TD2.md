@@ -108,6 +108,8 @@ dim(drivers)
 
 ### Exercice sur les Fonctions en R
 
+#### Les fonctions `cor()`, `corrplot()`, `install.packages()` et `plot()`.
+
 1. Pour chaque dataset, effectuer un résumé des données avec la fonction adaptée.
 
 <details>
@@ -277,6 +279,7 @@ corrplot(matriceCor, method="color",
 
 ### Exercice sur les Fonctions en R
 
+#### Les fonctions `order()`.
 
 1. Créer un object `resultat` avec uniquement le nom du `Driver` et son `Weight`.
 
