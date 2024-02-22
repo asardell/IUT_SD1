@@ -19,7 +19,7 @@ Voici les objectifs de ce module :
 1. TD1 : Les bases de R et les vecteurs
 2. TP1 : Les bases des dataframes
 3. TD2 : Importer et manipulation de dataframe
-4. TP2 : à définir
+4. TP2 : Rappel et cas pratique
 5. TD3 : à définir
 6. TP3 : EXAM
 7. TD4 : à définir
