@@ -8,7 +8,7 @@ Voici les objectifs de ce TD :
 
 1. [TP2 - Rappel et cas pratique](#tp2---rappel-et-cas-pratique)
    1. [Objectifs](#objectifs)
-   2. [Exercice 1 - Importer les donnée](#exercice-1---importer-les-donnée)
+   2. [Exercice 1 - Importer les données](#exercice-1---importer-les-données)
    3. [Exercice 2 - Statistiques descriptives](#exercice-2---statistiques-descriptives)
    4. [Exercice 3 -  Tris et filtres](#exercice-3----tris-et-filtres)
    5. [Exercice 4 -  Modifier le dataframe](#exercice-4----modifier-le-dataframe)
@@ -28,7 +28,7 @@ Voici une description des données :
 - `Export_viande` : Exportations de viande en milliers de tonnes en 2020
 - `Population` : Nombre estimé d’habitant en 2018
 
-## Exercice 1 - Importer les donnée
+## Exercice 1 - Importer les données
 
 1. Importer le jeu de données fao.csv avec la fonction `read.csv()` uniquement dans un objet appelé `df`. Vérifier le type des colonnes pour vérifier que les colonnes aient le bon type.
 <details>
@@ -184,7 +184,7 @@ Pour chaque question, il est recommandé de sauvegarder le résultat de la requ�
 ```
 </details>
 
-3. Exporter le nouveau dataframe dans un fichier csv nommée *ExportTp2.csv* avec la fonction `write.table()`.
+3. Exporter le nouveau dataframe dans un fichier csv nommé *ExportTp2.csv* avec la fonction `write.table()`.
 <details>
 <summary>Correction</summary>
 
@@ -212,7 +212,7 @@ Pour chaque question, il est recommandé de sauvegarder le résultat de la requ�
 
 :warning: ne pas confondre corrélation et lien de cause à effet. [La preuve en chiffre !](https://www.tylervigen.com/spurious-correlations) 
 
-1. Représenter graphiquement dans un nuage de points le lien entre les statistiques des drivers sur `Prod_viande` et `Export_viande`. Commenter le lien entre ces deux variables ? 
+1. Représenter graphiquement dans un nuage de points le lien entre `Prod_viande` et `Export_viande`. Commenter le lien entre ces deux variables ? 
 <details>
 <summary>Correction</summary>
 
@@ -228,7 +228,10 @@ Pour chaque question, il est recommandé de sauvegarder le résultat de la requ�
 ```
 </details>
 
-3. Construire la matrice des corrélations des *variables quantitatives* avec la fonction `cor()`. Afficher cette matrice dans une vue et arrondisser les valeurs avec deux décimales uniquements. Commenter la relation la plus forte, la plus faible. Que peut-on dire du lien entre la variable  `Dispo_alim` et `Prod_viande` ?
+1. Construire la matrice des corrélations des *variables quantitatives* avec la fonction `cor()`. Afficher cette matrice dans une vue et arrondisser les valeurs avec deux décimales uniquements. Commenter la relation la plus forte, la plus faible. 
+
+:warning: Il y a des `N/A` dans le dataset, essayer de trouver la solution en vous aidant la rubrique *Help*.
+
 <details>
 <summary>Correction</summary>
 
@@ -236,7 +239,7 @@ Pour chaque question, il est recommandé de sauvegarder le résultat de la requ�
 ```
 </details>
 
-4. Pour mieux visualiser ces corrélations, nous allons utiliser un package qui ne fait pas parti des packages par défaut. Installer le package `corrplot` avec la fonction `install.packages()` **sauf** s'il est déjà installé.
+1. Pour mieux visualiser ces corrélations, nous allons utiliser un package qui ne fait pas parti des packages par défaut. Installer le package `corrplot` avec la fonction `install.packages()` **sauf** s'il est déjà installé.
 
 <details>
 <summary>Correction</summary>
