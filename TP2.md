@@ -35,6 +35,7 @@ Voici une description des données :
 <summary>Correction</summary>
 
 ```r
+df<-read.csv("fao.csv", sep=";", dec=",", header = T)
 ```
 </details>
 
@@ -45,6 +46,7 @@ Voici une description des données :
 <summary>Correction</summary>
 
 ```r
+nrow(df)
 ```
 </details>
 
@@ -53,6 +55,7 @@ Voici une description des données :
 <summary>Correction</summary>
 
 ```r
+summary(df)
 ```
 </details>
 
@@ -63,6 +66,7 @@ Voici une description des données :
 <summary>Correction</summary>
 
 ```r
+mean(df$Dispo_alim, na.rm=TRUE)
 ```
 </details>
 
@@ -71,6 +75,7 @@ Voici une description des données :
 <summary>Correction</summary>
 
 ```r
+sum(df$Population, na.rm=TRUE)
 ```
 </details>
 
@@ -79,6 +84,8 @@ Voici une description des données :
 <summary>Correction</summary>
 
 ```r
+sd(df$Export_viande, na.rm=TRUE)
+sd(df$Import_viande, na.rm=TRUE)
 ```
 </details>
 
@@ -87,6 +94,7 @@ Voici une description des données :
 <summary>Correction</summary>
 
 ```r
+median(df$Prod_viande, na.rm=TRUE)
 ```
 </details>
 
@@ -95,6 +103,7 @@ Voici une description des données :
 <summary>Correction</summary>
 
 ```r
+quantile(df$Dispo_alim)
 ```
 </details>
 
@@ -103,6 +112,7 @@ Voici une description des données :
 <summary>Correction</summary>
 
 ```r
+quantile(df$Import_viande, seq(0,1,0.01))
 ```
 </details>
 
@@ -115,6 +125,9 @@ Pour chaque question, il est recommandé de sauvegarder le résultat de la requ�
 <summary>Correction</summary>
 
 ```r
+rang = order(df$Population)
+resultat = head(df[ rang , ], n = 5)
+View(resultat)
 ```
 </details>
 
@@ -123,6 +136,9 @@ Pour chaque question, il est recommandé de sauvegarder le résultat de la requ�
 <summary>Correction</summary>
 
 ```r
+rang = order(df$Population, decreasing = TRUE)
+resultat = head(df[ rang , ], n = 5)
+View(resultat)
 ```
 </details>
 
@@ -131,6 +147,9 @@ Pour chaque question, il est recommandé de sauvegarder le résultat de la requ�
 <summary>Correction</summary>
 
 ```r
+rang = order(df$Prod_viande, decreasing = TRUE)
+resultat = head(df[ rang , ], n = 5)
+View(resultat)
 ```
 </details>
 
@@ -139,6 +158,9 @@ Pour chaque question, il est recommandé de sauvegarder le résultat de la requ�
 <summary>Correction</summary>
 
 ```r
+rang = order(df$Import_viande, decreasing = TRUE)
+resultat = head(df[ rang , ], n = 5)
+View(resultat)
 ```
 </details>
 
@@ -147,6 +169,8 @@ Pour chaque question, il est recommandé de sauvegarder le résultat de la requ�
 <summary>Correction</summary>
 
 ```r
+resultat = subset(df, Dispo_alim>=2300)
+View(resultat)
 ```
 </details>
 
@@ -155,6 +179,8 @@ Pour chaque question, il est recommandé de sauvegarder le résultat de la requ�
 <summary>Correction</summary>
 
 ```r
+resultat = subset(df, Dispo_alim > 3500  & Import_viande > 1000)
+View(resultat)
 ```
 </details>
 
@@ -163,6 +189,8 @@ Pour chaque question, il est recommandé de sauvegarder le résultat de la requ�
 <summary>Correction</summary>
 
 ```r
+resultat = subset(df, $Nom %in% c("France","Belgique"))
+View(resultat)
 ```
 </details>
 
@@ -173,6 +201,7 @@ Pour chaque question, il est recommandé de sauvegarder le résultat de la requ�
 <summary>Correction</summary>
 
 ```r
+df$Part_export<-df$Export_viande/df$Prod_viande
 ```
 </details>
 
@@ -181,6 +210,7 @@ Pour chaque question, il est recommandé de sauvegarder le résultat de la requ�
 <summary>Correction</summary>
 
 ```r
+df$Dispo_alim_pays<-df$Dispo_alim*df$Population
 ```
 </details>
 
@@ -189,6 +219,7 @@ Pour chaque question, il est recommandé de sauvegarder le résultat de la requ�
 <summary>Correction</summary>
 
 ```r
+`write.table(x = df, file = "ExportTp2.csv")
 ```
 </details>
 
@@ -197,6 +228,8 @@ Pour chaque question, il est recommandé de sauvegarder le résultat de la requ�
 <summary>Correction</summary>
 
 ```r
+dispo_alim_mondiale = sum(df$Dispo_alim_pays, na.rm=TRUE)
+dispo_alim_mondiale
 ```
 </details>
 
@@ -205,6 +238,7 @@ Pour chaque question, il est recommandé de sauvegarder le résultat de la requ�
 <summary>Correction</summary>
 
 ```r
+dispo_alim_mondiale/2300
 ```
 </details>
 
@@ -217,6 +251,9 @@ Pour chaque question, il est recommandé de sauvegarder le résultat de la requ�
 <summary>Correction</summary>
 
 ```r
+plot(x = df$Prod_viande,
+     y = df$Export_viande, 
+     main = "Pays : Prod_viande / Export_viande")
 ```
 </details>
 
@@ -225,26 +262,33 @@ Pour chaque question, il est recommandé de sauvegarder le résultat de la requ�
 <summary>Correction</summary>
 
 ```r
+cor(x = df$Prod_viande,
+    y = df$Export_viande)
 ```
 </details>
 
-1. Construire la matrice des corrélations des *variables quantitatives* avec la fonction `cor()`. Afficher cette matrice dans une vue et arrondisser les valeurs avec deux décimales uniquements. Commenter la relation la plus forte, la plus faible. 
+3. Construire la matrice des corrélations des *variables quantitatives* avec la fonction `cor()`. Afficher cette matrice dans une vue et arrondisser les valeurs avec deux décimales uniquements. Commenter la relation la plus forte, la plus faible. 
 
-:warning: Il y a des `N/A` dans le dataset, essayer de trouver la solution en vous aidant la rubrique *Help*.
+:warning: Il y a des `N/A` dans le dataset, essayer de trouver la solution en vous aidant de la rubrique *Help*.
 
 <details>
 <summary>Correction</summary>
 
 ```r
+matriceCor = cor(df[ , - 1] , use = complete.obs")
+matriceCor = round(matriceCor , 2)
+View(matriceCor)
 ```
 </details>
 
-1. Pour mieux visualiser ces corrélations, nous allons utiliser un package qui ne fait pas parti des packages par défaut. Installer le package `corrplot` avec la fonction `install.packages()` **sauf** s'il est déjà installé.
+4. Pour mieux visualiser ces corrélations, nous allons utiliser un package qui ne fait pas parti des packages par défaut. Installer le package `corrplot` avec la fonction `install.packages()` **sauf** s'il est déjà installé.
 
 <details>
 <summary>Correction</summary>
 
 ```r
+#commande à executer qu'une seule fois
+install.packages("corrplot")
 ```
 </details>
 
@@ -256,6 +300,8 @@ Pour chaque question, il est recommandé de sauvegarder le résultat de la requ�
 <summary>Correction</summary>
 
 ```r
+library(corrplot) #je charge mon package pour pouvoir utiliser ses fonctionalités
+corrplot(matriceCor, method="circle")
 ```
 </details>
 
