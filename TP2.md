@@ -35,7 +35,7 @@ Voici une description des données :
 <summary>Correction</summary>
 
 ```r
-df<-read.csv("fao.csv", sep=";", dec=",", header = T)
+df<-read.csv("fao.csv", sep=";", dec=",", header = TRUE)
 ```
 </details>
 
@@ -219,7 +219,7 @@ df$Dispo_alim_pays<-df$Dispo_alim*df$Population
 <summary>Correction</summary>
 
 ```r
-`write.table(x = df, file = "ExportTp2.csv")
+write.table(x = df, file = "ExportTp2.csv")
 ```
 </details>
 
