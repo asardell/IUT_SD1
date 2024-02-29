@@ -109,16 +109,16 @@ iris[ , c("Sepal.Length","Species")]
 ```
 </details>
 
-9. Afficher uniquement la ligne 100,103 et 105.
+8. Afficher uniquement la ligne 100,103 et 105.
 <details>
 <summary>Correction</summary>
 
 ```r
 iris[ c(100,103,105) , ]
 ```
-</details
+</details>
 
-10. Afficher uniquement les lignes 50 à 100.
+9. Afficher uniquement les lignes 50 à 100.
 <details>
 <summary>Correction</summary>
 
@@ -127,7 +127,7 @@ iris[ 50:100 , ]
 ```
 </details>
 
-11.  Calculer la moyenne de la variable `Sepal.Length`.
+10.  Calculer la moyenne de la variable `Sepal.Length`.
 <details>
 <summary>Correction</summary>
 
@@ -136,7 +136,7 @@ mean(iris$Sepal.Length)
 ```
 </details>
 
-12.  Calculer la médiane de la variable `Sepal.Width`.
+11.  Calculer la médiane de la variable `Sepal.Width`.
 <details>
 <summary>Correction</summary>
 
@@ -145,7 +145,7 @@ median(iris$Sepal.Length)
 ```
 </details>
 
-13.   Calculer l'écart-type de la variable `Petal.Length`.
+12.   Calculer l'écart-type de la variable `Petal.Length`.
 <details>
 <summary>Correction</summary>
 
@@ -154,7 +154,7 @@ sd(iris$Petal.Length)
 ```
 </details>
 
-14.   Calculer les déciles de la variable `Petal.Width`.
+13.   Calculer les déciles de la variable `Petal.Width`.
 <details>
 <summary>Correction</summary>
 
@@ -180,7 +180,7 @@ quantile(iris$Petal.Width, probs = seq(from = 0.1, to = 0.9, by =0.1))
 | `<` | Vérifie si une valeur est strictement inférieure à une autre. | `subset(dataframe, colonne3 < 5)` |
 | `<=` | Vérifie si une valeur est inférieure ou égale à une autre. | `subset(dataframe, colonne4 <= 100)` |
 | `&` | Opérateur logique ET, renvoie TRUE si les deux conditions sont remplies. | `subset(dataframe, colonne1 > 10 & colonne2 < 5)` |
-| `\|` | Opérateur logique OU, renvoie TRUE si au moins l'une des conditions est remplie. | `subset(dataframe, colonne3 == "oui" | colonne4 != "non")` |
+| `\|` | Opérateur logique OU, renvoie TRUE si au moins l'une des conditions est remplie. | `subset(dataframe, colonne3 == "oui"` | colonne4 != "non")` |
 | `!=` | Vérifie si deux valeurs sont différentes. | `subset(dataframe, colonne5 != "invalide")` |
 | `==` | Vérifie si deux valeurs sont égales. | `subset(dataframe, colonne6 == "valide")` |
 | `%in%` | Vérifie si une valeur est présente dans un vecteur ou une liste. | `subset(dataframe, colonne7 %in% c("valeur1", "valeur2", "valeur3"))` |
