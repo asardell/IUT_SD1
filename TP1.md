@@ -17,8 +17,8 @@ Voici les objectifs de ce TD :
       2. [Exercice sur les Fonctions en R](#exercice-sur-les-fonctions-en-r-1)
          1. [La fonction `read.csv()`](#la-fonction-readcsv)
          2. [Les fonctions `subset()`,  `table()` et `prop.table()`](#les-fonctions-subset--table-et-proptable)
-            1. [Filtre sur les Animes](#filtre-sur-les-animes)
-            2. [Filtre sur les Animes](#filtre-sur-les-animes-1)
+            1. [Filtre sur les Mangas](#filtre-sur-les-mangas)
+            2. [Filtre sur les Animes](#filtre-sur-les-animes)
          3. [Les fonctions `rbind()` et `write.table()`](#les-fonctions-rbind-et-writetable)
 
     
@@ -276,7 +276,7 @@ quantile(dfAnime$Score, probs = seq(from = 0.1, to = 0.9, by = 0.1))
 
 Pour chaque extraction, créer un nouvel objet et calculer le nombre de ligne filtrées.
 
-##### Filtre sur les Animes
+##### Filtre sur les Mangas
 
 1. Combien de Manga ont une note strictement supérieure à 9/10 ?
 <details>
