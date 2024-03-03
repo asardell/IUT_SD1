@@ -20,7 +20,7 @@ Voici les objectifs de ce module :
 2. TP1 : Les bases des dataframes
 3. TD2 : Importer et manipulation de dataframe
 4. TP2 : Rappel et cas pratique
-5. TD3 : à définir
+5. TD3 : Créer des colonnes calculées et des agrégations
 6. TP3 : EXAM
 7. TD4 : à définir
 8. TP4 : à définir
