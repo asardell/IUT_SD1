@@ -63,6 +63,18 @@ Voici quelques liens utiles :
 | `[ , ]` | Indexe un dataframe au niveau des lignes et des colonnes. | `row_index` : index ou condition pour sélectionner les lignes, `col_index` : index ou noms de colonnes pour sélectionner les colonnes. | `donnees_subset <- donnees[1:10, c("colonne1", "colonne2")]` |
 | `[ - , ]` | Indexation inverse, exclut les lignes ou colonnes spécifiées. | `row_index` : index ou condition pour exclure les lignes, `col_index` : index ou noms de colonnes pour exclure les colonnes. | `donnees_sans_colonne3 <- donnees[, -3]` |
 
+| Opérateur logique | Description | Exemple avec la fonction `subset()` |
+|-------------------|-------------|----------------------------------------|
+| `>` | Vérifie si une valeur est strictement supérieure à une autre. | `subset(dataframe, colonne1 > 10)` |
+| `>=` | Vérifie si une valeur est supérieure ou égale à une autre. | `subset(dataframe, colonne2 >= 0)` |
+| `<` | Vérifie si une valeur est strictement inférieure à une autre. | `subset(dataframe, colonne3 < 5)` |
+| `<=` | Vérifie si une valeur est inférieure ou égale à une autre. | `subset(dataframe, colonne4 <= 100)` |
+| `&` | Opérateur logique ET, renvoie TRUE si les deux conditions sont remplies. | `subset(dataframe, colonne1 > 10 & colonne2 < 5)` |
+| `\|` | Opérateur logique OU, renvoie TRUE si au moins l'une des conditions est remplie. | `subset(dataframe, colonne3 == "oui"` | colonne4 != "non")` |
+| `!=` | Vérifie si deux valeurs sont différentes. | `subset(dataframe, colonne5 != "invalide")` |
+| `==` | Vérifie si deux valeurs sont égales. | `subset(dataframe, colonne6 == "valide")` |
+| `%in%` | Vérifie si une valeur est présente dans un vecteur ou une liste. | `subset(dataframe, colonne7 %in% c("valeur1", "valeur2", "valeur3"))` |
+| `!` | Opérateur logique NON, renvoie l'inverse d'une condition. | `subset(dataframe, !colonne8 %in% c("B","C"))` |
 
 | Nom de la fonction | Description | Argument Pertinent | Exemple |
 |------------------|-------------|--------------------|---------|
@@ -112,3 +124,9 @@ Voici quelques liens utiles :
 | `install.packages()` | Installe un package R depuis un dépôt CRAN ou local. | `pkgs` : le nom du package à installer, `repos` : l'URL du dépôt, `dependencies` : spécifie si les dépendances doivent également être installées (par défaut TRUE). | `install.packages("nom_du_package")` |
 | `library()` | Charge un package R déjà installé en mémoire pour être utilisé dans la session R courante. | `package` : le nom du package à charger. | `library(nom_du_package)` |
 | `order()` | Trie les éléments d'un vecteur et retourne les indices dans l'ordre croissant ou décroissant. | `x` : le vecteur à trier, `decreasing` : spécifie si le tri doit être effectué dans l'ordre décroissant (par défaut FALSE). | `indices_tri <- order(vecteur, decreasing = FALSE)` |
+| `read_excel()` | Lit un fichier Excel dans R. | `path` : le chemin vers le fichier Excel, `sheet` : le nom ou l'index de la feuille à lire | `readxl::read_excel(path = "/chemin/vers/votre/fichier.xlsx", sheet = "Nom_de_la_feuille")` |
+| `as.factor()` | Convertit un vecteur en facteur. | `x` : le vecteur à convertir | `as.factor(x = c("A", "B", "A", "C"))` |
+| `ifelse()` | Retourne des valeurs en fonction d'une condition. | `test` : la condition logique à évaluer, `yes` : la valeur à retourner si la condition est vraie, `no` : la valeur à retourner si la condition est fausse | `ifelse(test = x > 0, yes = "Positif", no = "Négatif")` |
+| `cut()` | Divise les valeurs numériques en intervalles. | `x` : le vecteur de valeurs numériques à découper, `breaks` : les points de rupture pour diviser les valeurs, `labels` : les étiquettes à attribuer aux intervalles | `cut(x = c(1, 2, 3, 4, 5), breaks = 3, labels = c("Faible", "Moyen", "Fort"))` |
+| `is.na()` | Vérifie si les valeurs sont manquantes (NA). | `x` : le vecteur à tester | `is.na(x)` |
+| `aggregate()` | Effectue une opération d'agrégation sur les données groupées. | `x` : formule spécifiant les variables à agréger et les variables de groupe, `data` : le jeu de données, `FUN` :  la ou les fonctions d'agrégation souhaitées | `aggregate(x = y ~ a + b, data = dataframe, FUN = function(x) mean(x))` |
