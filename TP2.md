@@ -275,7 +275,7 @@ cor(x = df$Prod_viande,
 <summary>Correction</summary>
 
 ```r
-matriceCor = cor(df[ , - 1] , use = complete.obs")
+matriceCor = cor(df[ , - 1] , use = "complete.obs")
 matriceCor = round(matriceCor , 2)
 View(matriceCor)
 ```
