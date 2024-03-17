@@ -25,7 +25,7 @@ setwd("C:/Users/Anthony/Documents/asardell/TP3")
 <summary>Correction</summary>
 
 ```r
-df = read.csv(file = "data.csv", sep = "\t", dec = ",")
+df = read.csv(file = "quiz.csv", sep = "\t", dec = ",")
 ```
 </details>
 
