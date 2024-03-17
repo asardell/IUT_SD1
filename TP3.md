@@ -416,6 +416,7 @@ summary(df$Moyenne_Classe)
 
 <details>
 <summary>Correction</summary>
+
 ```r
 write.table(x = df, file = "exam_export.csv", sep = ";", dec = ",", row.names = FALSE)
 ```
