@@ -84,7 +84,7 @@ tables(df$bornes)
 
 ### Mémo
 | Nom de la commande | Description | Arguments Pertinents              | Exemple |
-|-------------------|-------------|----------------------|---------|
+|-------------------|-------------|--------------------------------|---------|
 | `hist()` | Crée un histogramme à partir des données. | `x` : les données à utiliser <br> `main` : le titre du graphique <br> `xlab` : le label de l'axe des x <br> `col` : la couleur des barres <br> `breaks` : le nombre d'intervalles <br > `probability` : si TRUE, les hauteurs des barres représentent des densités de probabilité plutôt que des effectifs <br> `ylim` : les limites de l'axe y <br> `xlim` : les limites de l'axe x | `hist(df$stands, main = "Histogramme des stands", xlab = "Stands", col = "blue", breaks = 5, probability = FALSE, ylim = c(0, 200), xlim = c(0, 100)))` |
 | `abline()` | Ajoute une ligne à un graphique existant. | `a` : l'ordonnée à l'origine <br> `b` : la pente de la ligne <br> `h` : l'emplacement de la ligne horizontale <br> `v` : l'emplacement de la ligne verticale <br> `reg` : si TRUE, trace une ligne de régression linéaire <br> `col` : la couleur de la ligne <br> `lty` : le type de ligne (par défaut, solide) | `abline(a = 0, b = 1, col = "red", lty = 2)` |
 | `density()` | Estime la densité de probabilité d'un échantillon. | `x` : le vecteur de données à utiliser | `density(df$variable)` |
@@ -218,7 +218,7 @@ Il permet d'apporter d'autres informations telles que les quartiles et éventuel
 
 ### Mémo
 | Nom de la commande | Description | Arguments Pertinents               | Exemple |
-|-------------------|-------------|----------------------|---------|
+|-------------------|-------------|------------------------------------------|---------|
 | `boxplot()` | Crée un diagramme en boîte à partir des données. | `x` : les données à utiliser <br> `main` : le titre du graphique <br> `outline` : si FALSE, supprime les points aberrants <br> `horizontal` : si TRUE, dessine un diagramme horizontal <br> `ylim` : les limites de l'axe y <br> `xlim` : les limites de l'axe x <br> `formula` : une formule décrivant les données <br> `data` : un objet de données à utiliser | `boxplot(height, main = "Diagramme en boîte de la taille", outline = FALSE, horizontal = TRUE, ylim = c(140, 200), xlim = c(0, 10))` OU `boxplot(formula = price ~ pays, data = df)` |
 | `points()` | Ajoute des points à un graphique existant. | `x` : les coordonnées x des points <br> `y` : les coordonnées y des points <br> `pch` : le type de symbole à utiliser pour les points <br> `col` : la couleur des points | `points(x = c(1,5,3), y = c(-1,5,0), pch = 16, col = "blue")` |
 | `tapply()` | Applique une fonction à des sous-ensembles de valeurs. | `X` : le vecteur de données <br> `INDEX` : une liste ou un facteur indiquant les groupes <br> `FUN` : la fonction à appliquer <br> `...` : d'autres arguments passés à la fonction `FUN` | `tapply(X = df$variable, INDEX = df$group, FUN = mean)` |
@@ -338,7 +338,7 @@ points(means, col = "red", pch = 19)
 
 ### Mémo
 | Nom de la commande | Description | Arguments Pertinents               | Exemple |
-|-------------------|-------------|----------------------|---------|
+|-------------------|-------------|--------------------------------|---------|
 | `barplot()` | Crée un diagramme à barres. | `height` : les hauteurs des barres <br> `beside` : si TRUE, les barres sont placées côte à côte <br> `main` : le titre du graphique <br> `xlab` : le label de l'axe des abscisses <br> `ylab` : le label de l'axe des ordonnées <br> `horiz` : si TRUE, les barres sont dessinées horizontalement <br> `col` : la couleur des barres <br> `las` : l'orientation des étiquettes sur l'axe des abscisses | `barplot(height = df$variable, main = "Titre du graphique", xlab = "Axe X", ylab = "Axe Y", horiz = TRUE, col = "blue", las = 2)` |
 | `table()` | Crée un tableau de contingence à partir des données. | `...` : les variables à utiliser pour créer le tableau | `table(df$variable1, df$variable2)` |
 | `prop.table()` | Calcule les proportions d'un tableau de contingence. | `x` : le tableau de contingence <br> `margin` : l'axe le long duquel calculer les proportions | `prop.table(x = table(df$variable1, df$variable2), margin = 1)` |
@@ -569,7 +569,7 @@ dev.print(device = png, file = "export.png", width = 600)
 
 ### Mémo
 | Nom de la commande | Description | Arguments Pertinents               | Exemple |
-|-------------------|-------------|----------------------|---------|
+|-------------------|-------------|--------------------------------|---------|
 | `plot()` | Crée un nuage de points. | `x` : les valeurs de l'axe des abscisses <br> `y` : les valeurs de l'axe des ordonnées <br> `main` : le titre du graphique <br> `xlab` : le label de l'axe des abscisses <br> `ylab` : le label de l'axe des ordonnées <br> `col` : la couleur des points <br> `pch` : le type de marqueur à utiliser pour les points <br> `cex` : le facteur de mise à l'échelle pour la taille des caractères <br> `xlim` : les limites de l'axe des abscisses <br> `ylim` : les limites de l'axe des ordonnées | `plot(x = df$variable1, y = df$variable2, main = "Nuage de points", xlab = "Variable X", ylab = "Variable Y", col = "blue", pch = 16, cex = 1.5, xlim = c(0, 10), ylim = c(0, 20))` |
 | `levels()` | Renvoie les niveaux d'un vecteur facteur. | `x` : le vecteur facteur dont vous souhaitez obtenir les niveaux | `levels(df$variable)` |
 
@@ -700,7 +700,7 @@ Voici quelques liens utiles :
 <img src="./img/recap_graphique.png" alt="" style="height: 600px;">
 
 | Nom de la commande | Description | Arguments Pertinents              | Exemple |
-|-------------------|-------------|----------------------|---------|
+|-------------------|-------------|--------------------------------|---------|
 | `main` | Le titre principal du graphique. | Chaîne de caractères | `main = "Titre du graphique"` |
 | `xlab` | Le label de l'axe des abscisses. | Chaîne de caractères | `xlab = "Label X"` |
 | `ylab` | Le label de l'axe des ordonnées. | Chaîne de caractères | `ylab = "Label Y"` |
