@@ -9,24 +9,24 @@ Voici les objectifs de ce chapitre :
 Dans ce TD, nous utiliserons les fonctionnalités de base de R et donc **sans** le package `ggplot2`.
 Ce TD utilise le fichier `velov.csv` qui décrit les statistiques des bornes vélo'v. Les données proviennent d'une API  ([plus d'info sur les données ici](https://developer.jcdecaux.com/#/opendata/vls?page=dynamic&contract=lyon)). On a supprimé certaines colonnes et ajouter le code postal. Il est conseillé de parcourir le TD en s'aidant de la correction pour comprendre les commandes R.
 
-`number` le numéro de la station. Attention, ce n'est pas un id, ce numéro n'est unique qu'au sein d'un contrat
-`contractName` le nom du contrat de cette station
-`name` le nom de la station
-`address` adresse indicative de la station, les données étant brutes, parfois il s'agit plus d'un commentaire que d'une adresse.
-`position` les coordonnées GPS au format WGS84
-`banking` indique la présence d'un terminal de paiement
-`bonus` indique s'il s'agit d'une station bonus 
-`status` indique l'état de la station, peut être `CLOSED` ou `OPEN`
-`connected` indique si la station est connectée au système central
-`bikes` indique le nombre de vélos disponibles sur la station
-`stands` indique le nombre de places disponibles sur la station
-`mechanicalBikes` indique le nombre de vélos mécaniques disponibles sur la station
-`electricalBikes` indique le nombre de vélos électriques disponibles sur la station
-`electricalInternalBatteryBikes` indique le nombre de vélos électriques avec batterie non amovible disponibles sur la station
-`electricalRemovableBatteryBikes` indique le nombre de vélos électriques avec batterie amovible disponibles sur la station
-`capacity` indique la capacité totale de la station
-`CodePostal` indique le code postal de la localisation de la station
-`lastUpdate` timestamp indiquant le moment de la dernière mise à jour
+- `number` le numéro de la station. Attention, ce n'est pas un id, ce numéro n'est unique qu'au sein d'un contrat
+- `contractName` le nom du contrat de cette station
+- `name` le nom de la station
+- `address` adresse indicative de la station, les données étant brutes, parfois il s'agit plus d'un commentaire que d'une adresse.
+- `position` les coordonnées GPS au format WGS84
+- `banking` indique la présence d'un terminal de paiement
+- `bonus` indique s'il s'agit d'une station bonus 
+- `status` indique l'état de la station, peut être `CLOSED` ou `OPEN`
+- `connected` indique si la station est connectée au système central
+- `bikes` indique le nombre de vélos disponibles sur la station
+- `stands` indique le nombre de places disponibles sur la station
+- `mechanicalBikes` indique le nombre de vélos mécaniques disponibles sur la station
+- `electricalBikes` indique le nombre de vélos électriques disponibles sur la station
+- `electricalInternalBatteryBikes` indique le nombre de vélos électriques avec batterie non amovible disponibles sur la station
+- `electricalRemovableBatteryBikes` indique le nombre de vélos électriques avec batterie amovible disponibles sur la station
+- `capacity` indique la capacité totale de la station
+- `CodePostal` indique le code postal de la localisation de la station
+- `lastUpdate` timestamp indiquant le moment de la dernière mise à jour
 
 :warning: L'ensemble des exercices sont à réaliser dans un seul script nommé `iut_sd1_r_td4`
 
@@ -83,13 +83,14 @@ tables(df$bornes)
 ## Exercice 2 - L'histogramme
 
 ### Mémo
-| Nom de la commande | Description | Arguments Pertinents | Exemple |
+| Nom de la commande | Description | Arguments Pertinents              | Exemple |
 |-------------------|-------------|----------------------|---------|
 | `hist()` | Crée un histogramme à partir des données. | `x` : les données à utiliser <br> `main` : le titre du graphique <br> `xlab` : le label de l'axe des x <br> `col` : la couleur des barres <br> `breaks` : le nombre d'intervalles <br > `probability` : si TRUE, les hauteurs des barres représentent des densités de probabilité plutôt que des effectifs <br> `ylim` : les limites de l'axe y <br> `xlim` : les limites de l'axe x | `hist(df$stands, main = "Histogramme des stands", xlab = "Stands", col = "blue", breaks = 5, probability = FALSE, ylim = c(0, 200), xlim = c(0, 100)))` |
 | `abline()` | Ajoute une ligne à un graphique existant. | `a` : l'ordonnée à l'origine <br> `b` : la pente de la ligne <br> `h` : l'emplacement de la ligne horizontale <br> `v` : l'emplacement de la ligne verticale <br> `reg` : si TRUE, trace une ligne de régression linéaire <br> `col` : la couleur de la ligne <br> `lty` : le type de ligne (par défaut, solide) | `abline(a = 0, b = 1, col = "red", lty = 2)` |
 | `density()` | Estime la densité de probabilité d'un échantillon. | `x` : le vecteur de données à utiliser | `density(df$variable)` |
 | `lines()` | Ajoute des lignes à un graphique existant. | `x` : les coordonnées x des points à relier <br> `lwd` : l'épaisseur de ligne <br> `lty` : le type de ligne (par défaut, solide) <br> `col` : la couleur de la ligne | `lines(x = c(1, 2, 3), lwd = 2, lty = 2, col = "blue")` |
 
+#### Type de trait
 <img src="./img/lty.png" alt="" style="height: 200px;">
 
 ### Exercice sur les Fonctions en R
@@ -216,12 +217,13 @@ Le boxplot permet aussi d'analyser les variables quantitatives avec une vue univ
 Il permet d'apporter d'autres informations telles que les quartiles et éventuelles valeurs atypiques.
 
 ### Mémo
-| Nom de la commande | Description | Arguments Pertinents | Exemple |
+| Nom de la commande | Description | Arguments Pertinents               | Exemple |
 |-------------------|-------------|----------------------|---------|
 | `boxplot()` | Crée un diagramme en boîte à partir des données. | `x` : les données à utiliser <br> `main` : le titre du graphique <br> `outline` : si FALSE, supprime les points aberrants <br> `horizontal` : si TRUE, dessine un diagramme horizontal <br> `ylim` : les limites de l'axe y <br> `xlim` : les limites de l'axe x <br> `formula` : une formule décrivant les données <br> `data` : un objet de données à utiliser | `boxplot(height, main = "Diagramme en boîte de la taille", outline = FALSE, horizontal = TRUE, ylim = c(140, 200), xlim = c(0, 10))` OU `boxplot(formula = price ~ pays, data = df)` |
 | `points()` | Ajoute des points à un graphique existant. | `x` : les coordonnées x des points <br> `y` : les coordonnées y des points <br> `pch` : le type de symbole à utiliser pour les points <br> `col` : la couleur des points | `points(x = c(1,5,3), y = c(-1,5,0), pch = 16, col = "blue")` |
 | `tapply()` | Applique une fonction à des sous-ensembles de valeurs. | `X` : le vecteur de données <br> `INDEX` : une liste ou un facteur indiquant les groupes <br> `FUN` : la fonction à appliquer <br> `...` : d'autres arguments passés à la fonction `FUN` | `tapply(X = df$variable, INDEX = df$group, FUN = mean)` |
 
+#### Type de points
 <img src="./img/pch.png" alt="" style="height: 200px;">
 
 ### Exercice sur les Fonctions en R
@@ -335,7 +337,7 @@ points(means, col = "red", pch = 19)
 ## Exercice 4 - Le diagramme
 
 ### Mémo
-| Nom de la commande | Description | Arguments Pertinents | Exemple |
+| Nom de la commande | Description | Arguments Pertinents               | Exemple |
 |-------------------|-------------|----------------------|---------|
 | `barplot()` | Crée un diagramme à barres. | `height` : les hauteurs des barres <br> `beside` : si TRUE, les barres sont placées côte à côte <br> `main` : le titre du graphique <br> `xlab` : le label de l'axe des abscisses <br> `ylab` : le label de l'axe des ordonnées <br> `horiz` : si TRUE, les barres sont dessinées horizontalement <br> `col` : la couleur des barres <br> `las` : l'orientation des étiquettes sur l'axe des abscisses | `barplot(height = df$variable, main = "Titre du graphique", xlab = "Axe X", ylab = "Axe Y", horiz = TRUE, col = "blue", las = 2)` |
 | `table()` | Crée un tableau de contingence à partir des données. | `...` : les variables à utiliser pour créer le tableau | `table(df$variable1, df$variable2)` |
@@ -566,7 +568,7 @@ dev.print(device = png, file = "export.png", width = 600)
 ## Exercice 5 - Nuage de points
 
 ### Mémo
-| Nom de la commande | Description | Arguments Pertinents | Exemple |
+| Nom de la commande | Description | Arguments Pertinents               | Exemple |
 |-------------------|-------------|----------------------|---------|
 | `plot()` | Crée un nuage de points. | `x` : les valeurs de l'axe des abscisses <br> `y` : les valeurs de l'axe des ordonnées <br> `main` : le titre du graphique <br> `xlab` : le label de l'axe des abscisses <br> `ylab` : le label de l'axe des ordonnées <br> `col` : la couleur des points <br> `pch` : le type de marqueur à utiliser pour les points <br> `cex` : le facteur de mise à l'échelle pour la taille des caractères <br> `xlim` : les limites de l'axe des abscisses <br> `ylim` : les limites de l'axe des ordonnées | `plot(x = df$variable1, y = df$variable2, main = "Nuage de points", xlab = "Variable X", ylab = "Variable Y", col = "blue", pch = 16, cex = 1.5, xlim = c(0, 10), ylim = c(0, 20))` |
 | `levels()` | Renvoie les niveaux d'un vecteur facteur. | `x` : le vecteur facteur dont vous souhaitez obtenir les niveaux | `levels(df$variable)` |
@@ -695,9 +697,9 @@ Voici quelques liens utiles :
 
 ## En bref
 
-<img src="./img/recap_graphique.png" alt="" style="height: 200px;">
+<img src="./img/recap_graphique.png" alt="" style="height: 600px;">
 
-| Nom de la commande | Description | Arguments Pertinents | Exemple |
+| Nom de la commande | Description | Arguments Pertinents              | Exemple |
 |-------------------|-------------|----------------------|---------|
 | `main` | Le titre principal du graphique. | Chaîne de caractères | `main = "Titre du graphique"` |
 | `xlab` | Le label de l'axe des abscisses. | Chaîne de caractères | `xlab = "Label X"` |
