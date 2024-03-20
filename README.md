@@ -22,12 +22,13 @@ Voici les objectifs de ce module :
 4. TP2 : Rappel et cas pratique
 5. TD3 : Créer des colonnes calculées et des agrégations
 6. TP3 : EXAM
-7. TD4 : à définir
-8. TP4 : à définir
-9. TD5 : à définir
-10. TP5 : à définir
-11. TD6 : à définir
-12. TP6 : EXAM
+7. TD4 : Création et personnalisation de graphique
+8. TP4 : Algorithmique
+9. TD5 : Lois Statistiques
+10. TP5 : Les jointures
+11. TD6 : Chercher l'erreur
+12. TP6 : EXAM 
+
 
 ## Comment rendre son travail ? 
 
