@@ -222,6 +222,7 @@ Il permet d'apporter d'autres informations telles que les quartiles et éventuel
 | `boxplot()` | Crée un diagramme en boîte à partir des données. | `x` : les données à utiliser <br> `main` : le titre du graphique <br> `outline` : si FALSE, supprime les points aberrants <br> `horizontal` : si TRUE, dessine un diagramme horizontal <br> `ylim` : les limites de l'axe y <br> `xlim` : les limites de l'axe x <br> `formula` : une formule décrivant les données <br> `data` : un objet de données à utiliser | `boxplot(height, main = "Diagramme en boîte de la taille", outline = FALSE, horizontal = TRUE, ylim = c(140, 200), xlim = c(0, 10))` OU `boxplot(formula = price ~ pays, data = df)` |
 | `points()` | Ajoute des points à un graphique existant. | `x` : les coordonnées x des points <br> `y` : les coordonnées y des points <br> `pch` : le type de symbole à utiliser pour les points <br> `col` : la couleur des points | `points(x = c(1,5,3), y = c(-1,5,0), pch = 16, col = "blue")` |
 | `tapply()` | Applique une fonction à des sous-ensembles de valeurs. | `X` : le vecteur de données <br> `INDEX` : une liste ou un facteur indiquant les groupes <br> `FUN` : la fonction à appliquer <br> `...` : d'autres arguments passés à la fonction `FUN` | `tapply(X = df$variable, INDEX = df$group, FUN = mean)` |
+| `par()` | Modifie les paramètres graphiques de base. | `mfrow` : spécifie le nombre de lignes et de colonnes dans la fenêtre de graphique | `par(mfrow = c(2, 2))` |
 
 #### Type de points
 <img src="./img/pch.png" alt="" style="height: 200px;">
