@@ -24,6 +24,8 @@ Dans cet exercice, vous allez devoir programmer plusieurs fonctions pour calcule
 | `if(condition) { bloc_de_code }` | Exécute un bloc de code si la condition est vraie. | `condition` : la condition à évaluer | `if(x > 0) { print("x est positif") }` |
 | `if(condition) { bloc_de_code } else { autre_bloc_de_code }` | Exécute un bloc de code si la condition est vraie, sinon exécute un autre bloc de code. | `condition` : la condition à évaluer | `if(x > 0) { print("x est positif") } else { print("x est négatif ou nul") }` |
 | `if(condition1) { bloc_de_code1 } else if(condition2) { bloc_de_code2 }` | Exécute un bloc de code si la première condition est vraie, sinon vérifie une autre condition et exécute un autre bloc de code si cette condition est vraie. | `condition1`, `condition2` : les conditions à évaluer | `if(x > 0) { print("x est positif") } else if(x == 0) { print("x est nul") }` |
+| `readline(prompt = "")` | Lit une ligne depuis l'entrée standard (généralement le clavier). | `prompt` : le message à afficher à l'utilisateur pour le guider lors de la saisie | `valeur <- readline(prompt = "Veuillez saisir une valeur : ")` |
+| `cat(..., sep = " ")` | Concatène et imprime les éléments fournis. | `...` : les objets à imprimer <br> `sep` : le séparateur à utiliser entre les éléments (par défaut, un espace) | `cat("Hello", "world!", sep = " ")` |
 
 ### La commande `function()`
 
@@ -213,7 +215,7 @@ salaire_net = function(salaire_brut = 2500,temps_travail = 1, statut) {
 ```
 </details>
 
-1. Créer une fonction `shifumi()` qui demande à l'utilsateur de saisir une valeur dans la console entre *pierre* , *papier* ou *ciseaux*. La fonction simule également un de ces trois choix à l'aide de la fonction `sample()` puis retourne le résultat. Tester la fonction pour vérifier.
+8. Créer une fonction `shifumi()` qui demande à l'utilsateur de saisir une valeur dans la console entre *pierre* , *papier* ou *ciseaux*. La fonction simule également un de ces trois choix à l'aide de la fonction `sample()` puis retourne le résultat. Tester la fonction pour vérifier.
 
 <details>
 <summary>Correction</summary>
@@ -256,10 +258,42 @@ shifumi()
 
 ### Mémo
 | Nom de la commande | Description | Arguments Pertinents | Exemple |
-|-------------------|-------------|----------------------|---------|
+|--------------------|-------------|----------------------|---------|
+| `for (variable in sequence) { ... }` | Exécute un bloc de code pour chaque valeur dans une séquence spécifiée. | `variable` : la variable qui prendra les valeurs de la séquence à chaque itération | `for (i in 1:10) { ... }` |
+| `while (condition) { ... }` | Exécute un bloc de code tant qu'une condition spécifiée est vraie. | `condition` : l'expression logique qui doit être vraie pour continuer à exécuter le bloc de code | `while (x < 10) { ... }` |
 
+1. Somme cummulée : Créer une boucle `for()` qui parcourt les éléments du vecteur `c(1,2,3,4,5)` un par un. À chaque itération de la boucle, ajouter l'élément en cours au résultat précédent et afficher le résultat.
 
-1. Parcourir toutes les colonnes du dataframe `iris` à  l'aide d'une boucle `for()`. Pour chaque itération afficher la type de la colonne.
+<details>
+<summary>Correction</summary>
+
+```r
+resultat = 0
+for (element in c(1,2,3,4,5)) {
+  resultat = resultat +  element
+  print(paste("le resultat est : ",resultat))
+}
+```
+</details>
+
+2. Somme cummulée : Créer une boucle `while()` qui calcule la somme cumulative des nombres entiers à partir de 1 jusqu'à ce que la somme dépasse 50, en affichant le résultat à chaque étape ainsi que la valeur actuelle de l'élément à laquelle la boucle s'est arrêtée. 
+
+<details>
+<summary>Correction</summary>
+
+```r
+element = 1
+resultat = 0
+while (resultat <= 50) {
+  resultat = resultat +  element
+  print(paste("le resultat est : ",resultat))
+  print(paste("le programme s'est arrêté à la valeur : ", element))
+  element = element + 1
+}
+```
+</details>
+
+3. Parcourir toutes les colonnes du dataframe `iris` à  l'aide d'une boucle `for()`. Pour chaque itération afficher la type de la colonne.
 
 <details>
 <summary>Correction</summary>
@@ -272,7 +306,42 @@ for (colonne in colnames(iris)) {
 ```
 </details>
 
-2. Demander à l'utilisateur de saisir un nombre à l'aide de la fonction `readline()` pour afficher son carré. Faire cette opération 5 fois avec une boucle `for()`.
+4. Même question mais avec une boucle `while()`.
+
+<details>
+<summary>Correction</summary>
+
+```r
+# Initialisation de l'indice de colonne
+indice_colonne <- 1
+
+# Tant qu'il reste des colonnes à parcourir dans iris
+while (indice_colonne <= ncol(iris)) {
+  # Récupération du nom de la colonne
+  nom_colonne <- colnames(iris)[indice_colonne]
+  
+  # Récupération du type de données de la colonne
+  type_colonne <- class(iris[, nom_colonne])
+  
+  # Affichage du résultat
+  print(paste("la colonne ", nom_colonne, " est de type : ", type_colonne))
+  
+  # Passage à la colonne suivante
+  indice_colonne <- indice_colonne + 1
+}
+```
+</details>
+
+## Exercice 3 - GOAT : Cas pratiques
+
+### Mémo
+| Nom de la commande | Description | Arguments Pertinents | Exemple |
+|-------------------|-------------|----------------------|---------|
+| `list.files(path = ".", pattern = NULL, ...) ` | Renvoie une liste de noms de fichiers dans un répertoire donné. | `path` : le chemin du répertoire à examiner (par défaut, le répertoire de travail actuel) <br> `pattern` : un motif de recherche pour filtrer les noms de fichiers (par défaut, tous les fichiers) | `fichiers <- list.files(path = "chemin/vers/repertoire", pattern = "*.txt")` |
+| `file.info(...)`   | Renvoie des informations sur les fichiers spécifiés. | `...` : une liste de chemins de fichiers ou de répertoires à examiner. | `info <- file.info("chemin/vers/fichier.txt")` |
+| `tolower(x)`   | Convertit les caractères en minuscules. | `x` : le vecteur ou la chaîne de caractères à convertir en minuscules. | `chaine_minuscule <- tolower("Bonjour MONDE")` |
+
+1. Demander à l'utilisateur de saisir un nombre à l'aide de la fonction `readline()` pour afficher son carré. Faire cette opération 5 fois avec une boucle `for()`.
 
 <details>
 <summary>Correction</summary>
@@ -295,7 +364,7 @@ for (i in 1:5) {
 </details>
 
 
-1. Construire une boucle qui parcourt les fichiers d'une dossier pour connaître leur taille en octets.
+2. Construire une boucle qui parcourt les fichiers d'une dossier pour connaître leur taille en octets.
 
 <details>
 <summary>Correction</summary>
@@ -316,7 +385,7 @@ for (fichier in fichiers) {
 ```
 </details>
 
-1. Créer une boucle qui parcout toutes les colonnes du dataframe `iris`. Si la colonne est de type `numeric` contruire un `boxplot()` avec un titre, sinon construire un `barplot()` avec un titre.
+3. Créer une boucle qui parcout toutes les colonnes du dataframe `iris`. Si la colonne est de type `numeric` contruire un `boxplot()` avec un titre, sinon construire un `barplot()` avec un titre.
 
 <details>
 <summary>Correction</summary>
@@ -336,7 +405,7 @@ for (colonne in colnames(iris)) {
 ```
 </details>
 
-1. Construire une boucle `while()` qui permet à un utilisateur de jouer au shifumi jusqu'à ce qu'il souhaite arreter.
+4. Construire une boucle `while()` qui permet à un utilisateur de jouer au shifumi jusqu'à ce qu'il souhaite arreter.
 
 <details>
 <summary>Correction</summary>
@@ -361,13 +430,38 @@ while (continuer) {
 ```
 </details>
 
-1. juste prix
+5. Le juste prix : Créer une fonction `juste_prix()` qui demande à l'utilisateur de saisir un nombre jusqu'à trouver le bon nombre généré par le programme. Le programme retourne *c'est plus* ou *c'est moins* jusqu'à ce que l'utilisateur trouve la bonne réponse. Tester votre fonction.
 
 <details>
 <summary>Correction</summary>
 
 ```r
-xx
+# Fonction pour le jeu du juste prix
+juste_prix <- function() {
+  # Génération d'un nombre aléatoire entre 1 et 100
+  nombre_a_deviner <- sample(1:100, 1)
+  
+  # Initialisation de la réponse de l'utilisateur
+  reponse <- -1
+  
+  # Boucle tant que l'utilisateur n'a pas trouvé le bon nombre
+  while (reponse != nombre_a_deviner) {
+    # Demande à l'utilisateur de saisir un nombre
+    reponse <- as.integer(readline(prompt = "Devinez le nombre : "))
+    
+    # Vérifie si le nombre est trop grand, trop petit ou correct
+    if (reponse < nombre_a_deviner) {
+      cat("C'est plus !\n")
+    } else if (reponse > nombre_a_deviner) {
+      cat("C'est moins !\n")
+    } else {
+      cat("Bravo, vous avez trouvé le juste prix !\n")
+    }
+  }
+}
+
+# Appel de la fonction juste_prix pour commencer le jeu
+juste_prix()
 ```
 </details>
 
@@ -375,5 +469,5 @@ xx
 
 Voici quelques liens utiles :
 
-- [Cours sur la programmation R](https://asardell.github.io/programmation-r/)
+- [Cours sur la programmation R - Chapitre Algorithmique](https://asardell.github.io/programmation-r/algo.html)
 
