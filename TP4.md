@@ -167,7 +167,7 @@ Voici un tableau **fictif** du taux de prélèvement à la source selon le salai
 | Revenu mensuel net      | Taux |
 |:------------------------:|:----:|
 | Jusqu'à 1 591 €         | 0 %  |
-| 1 581 € à 2 006 €       | 2,9 %|
+| 1 591 € à 2 006 €       | 2,9 %|
 | 2 006 € à 3 476 €       | 9,9 %|
 | 3 476 € à 8 557 €       | 20 % |
 | Supérieur à 8 557 €     | 43 % |
