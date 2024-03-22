@@ -64,7 +64,7 @@ salaire_net_cadre()
 
 ```r
 salaire_net_cadre = function(salaire_brut = 2500,temps_travail = 1) {
-        salaire_net_avant_impot = salaire_brut * temps_travail
+        salaire_net_avant_impot = salaire_brut * * 0.75 * temps_travail
         return(salaire_net_avant_impot) 
 }
 #Test de la fonction
@@ -88,7 +88,7 @@ salaire_net_cadre = function(salaire_brut = 2500,temps_travail = 1) {
     return("Erreur :  le salaire brut doit être une valeur numérique")
   }
   
-  salaire_net_avant_impot = salaire_brut * temps_travail
+  salaire_net_avant_impot = salaire_brut * 0.75 * temps_travail
   return(salaire_net_avant_impot) 
 }
 #Test de la fonction
@@ -113,7 +113,7 @@ salaire_net_cadre = function(salaire_brut = 2500,temps_travail = 1) {
     return("Erreur :  le temps de travail doit être une valeur numérique entre 0 et 1")
   }
 
-  salaire_net_avant_impot = salaire_brut * temps_travail
+  salaire_net_avant_impot = salaire_brut * 0.75 * temps_travail
   return(salaire_net_avant_impot) 
 }
 #Test de la fonction
