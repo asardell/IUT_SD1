@@ -108,8 +108,12 @@ salaire_net_cadre = function(salaire_brut = 2500,temps_travail = 1) {
   if (!is.numeric(salaire_brut)) {
     return("Erreur :  le salaire brut doit être une valeur numérique")
   }
-  
-  if (is.numeric(temps_travail) & (temps_travail >= 0) & (temps_travail <= 1)) {
+
+  if (!is.numeric(temps_travail)) {
+    return("Erreur :  le temps de travail doit doit être une valeur numérique")
+  }
+
+  if ( (temps_travail > 1) | (temps_travail < 0)) {
     return("Erreur :  le temps de travail doit être une valeur numérique entre 0 et 1")
   }
 
@@ -137,7 +141,11 @@ salaire_net = function(salaire_brut = 2500,temps_travail = 1, statut) {
     return("Erreur :  le salaire brut doit être une valeur numérique")
   }
   
-  if (is.numeric(temps_travail) & (temps_travail >= 0) & (temps_travail <= 1)) {
+  if (!is.numeric(temps_travail)) {
+    return("Erreur :  le temps de travail doit doit être une valeur numérique")
+  }
+
+  if ( (temps_travail > 1) | (temps_travail < 0)) {
     return("Erreur :  le temps de travail doit être une valeur numérique entre 0 et 1")
   }
 
@@ -184,7 +192,11 @@ salaire_net = function(salaire_brut = 2500,temps_travail = 1, statut) {
     return("Erreur :  le salaire brut doit être une valeur numérique")
   }
   
-  if (is.numeric(temps_travail) & (temps_travail >= 0) & (temps_travail <= 1)) {
+  if (!is.numeric(temps_travail)) {
+    return("Erreur :  le temps de travail doit doit être une valeur numérique")
+  }
+
+  if ( (temps_travail > 1) | (temps_travail < 0)) {
     return("Erreur :  le temps de travail doit être une valeur numérique entre 0 et 1")
   }
 
