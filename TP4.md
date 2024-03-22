@@ -64,7 +64,7 @@ salaire_net_cadre()
 
 ```r
 salaire_net_cadre = function(salaire_brut = 2500,temps_travail = 1) {
-        salaire_net_avant_impot = salaire_brut * * 0.75 * temps_travail
+        salaire_net_avant_impot = salaire_brut * 0.75 * temps_travail
         return(salaire_net_avant_impot) 
 }
 #Test de la fonction
