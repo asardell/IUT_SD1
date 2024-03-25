@@ -145,7 +145,7 @@ qnorm(p = 0.975, mean = 0, sd = 1)
 ```
 </details>
 
-10. Quelle est la valeur théorique pour *P(X >= 1.96) = p*.
+10. Quelle est la probabilité théorique pour *P(X >= 1.96) = p*.
 
 <details>
 <summary>Correction</summary>
