@@ -177,7 +177,7 @@ Dans cet exercice, nous souhaitons reproduire dans un dataframe, la table de loi
 
 <img src="./img/table_loi_normale.png" alt="" style="height: 600px;">
 
-:bulb: Par exemple dans la table $P(X <= 0.073) = 0.7673$ 
+:bulb: Par exemple dans la table $P(X <= 0.73) = 0.7673$ 
 
 1. A l'aide de boucle `for`. Construire une vecteur avec les probabilités de la première colonne de la table de loi normale. On souhaite une précision avec uniquement 4 décimales.
 
