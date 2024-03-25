@@ -530,6 +530,7 @@ hist(moyennes_50, xlim=c(0,1), main="50")
 hist(moyennes_100, xlim=c(0,1), main="100")
 hist(moyennes_500, xlim=c(0,1), main="500")
 ```
+</details>
 
 ## Liens utiles
 
