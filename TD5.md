@@ -289,6 +289,12 @@ hist(population)
 
 4. Combien de personnes ont une taille inférieur à 190cm ? Combien devriez-vous en trouver théoriquement ?
 
+:warning: Attention la fonction `subset()` ne fonctionne pas sur un vecteur.
+
+```r
+is.data.frame(population)
+```
+
 <details>
 <summary>Correction</summary>
 
