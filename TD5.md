@@ -18,6 +18,10 @@ Dans cet exercice, nous allons effectuer plusieurs simulations de loi normale af
 | Nom de la commande | Description | Arguments Pertinents | Exemple |
 |-------------------|-------------|----------------------|---------|
 | `rnorm()` | Génère des échantillons aléatoires suivant une distribution normale *N(μ,σ)* . | `n` : nombre d'échantillons à générer. `mean` : moyenne de la distribution. `sd` : écart-type de la distribution. | `echantillon_norm <- rnorm(100, mean = 10, sd = 2)` |
+| `qnorm()` | Calcule les quantiles de la distribution normale spécifiée. | `p` : probabilité pour laquelle trouver le quantile. `mean` : moyenne de la distribution. `sd` : écart-type de la distribution. | `quantile <- qnorm(0.975, mean = 0, sd = 1)` |
+| `pnorm()` | Calcule la fonction de distribution cumulative (CDF) pour la distribution normale spécifiée. | `q` : valeur pour laquelle calculer la probabilité. `mean` : moyenne de la distribution. `sd` : écart-type de la distribution. | `pnorm(q = 1.96, mean = 0, sd = 1)` |
+
+### Exercice sur les Fonctions en R
 
 ### La commande `rnorm()`
 
@@ -124,6 +128,8 @@ quantile(serie,
 ```
 </details>
 
+### Les commandes `pnorm()` et `qnorm()`.
+
 8. Calculer la valeur théorique à l'aide de la fonction `qnorm()`. Vérifier cette valeur avec la fonction réciproque `pnorm()`
 
 <details>
@@ -161,8 +167,12 @@ qnorm(p = 0.975, mean = 0, sd = 1)
 ### Mémo
 | Nom de la commande | Description | Arguments Pertinents | Exemple |
 |-------------------|-------------|----------------------|---------|
+| `cbind()` | Combine des vecteurs, des matrices ou des data frames par colonne. | `...` : une ou plusieurs objets R à combiner, tels que des vecteurs, des matrices ou des data frames. | `combined_data <- cbind(vector1, vector2, ...)` |
+| `rownames()` | Renvoie ou définit les noms des lignes d'un objet R. | `x` : objet R pour lequel obtenir ou définir les noms des lignes. | `rownames(dataframe) <- new_row_names` |
+| `colnames()` | Renvoie ou définit les noms des colonnes d'un objet R. | `x` : objet R pour lequel obtenir ou définir les noms des colonnes. | `colnames(dataframe) <- new_col_names` |
 
 ### Exercice sur les Fonctions en R
+
 Dans cet exercice, nous souhaitons reproduire dans un dataframe, la table de loi normale ci-dessous : 
 
 <img src="./img/table_loi_normale.png" alt="" style="height: 600px;">
@@ -232,12 +242,6 @@ View(table)
 </details>
 
 ## Exercice 3 - Simulation d'une population
-
-### Mémo
-| Nom de la commande | Description | Arguments Pertinents | Exemple |
-|-------------------|-------------|----------------------|---------|
-
-### Exercice sur les Fonctions en R
 
 La taille moyenne des français est de 171cm avec un écart-type de 9 centimètres.
 
@@ -322,8 +326,14 @@ proba_inf_200 = pnorm(q = 200, mean=moyenne_pop, sd=sd_pop)
 ### Mémo
 | Nom de la commande | Description | Arguments Pertinents | Exemple |
 |-------------------|-------------|----------------------|---------|
+| `sample()` | Sélectionne un échantillon aléatoire à partir d'un vecteur. | `x` : vecteur à partir duquel échantillonner. `size` : taille de l'échantillon. `replace` : avec ou sans remise.| `echantillon_aleatoire <- sample(vecteur, size = 3, replace = TRUE)` |
+| `sqrt()` | Calcule la racine carrée d'un nombre ou d'un vecteur d'éléments. | `x` : nombre ou vecteur dont calculer la racine carrée. | `result <- sqrt(16)` |
+| `replicate()` | Répète l'évaluation d'une expression un certain nombre de fois et retourne les résultats sous forme de vecteur, de liste ou de tableau. | `n` : nombre de répétitions. `expr` : expression à évaluer. | `result <- replicate(n = 3, expr = mean(rnorm(100)))` |
+| `apply()` | Applique une fonction sur les marges d'un tableau (matrice ou data frame). | `X` : tableau (matrice ou data frame) sur lequel appliquer la fonction. `MARGIN` : spécifie les marges sur lesquelles appliquer la fonction (1 pour les lignes, 2 pour les colonnes). `FUN` : fonction à appliquer. `...` : arguments supplémentaires à passer à la fonction. | `result <- apply(X = df, MARGIN = 1, FUN = function(x) mean(x))` |
 
 ### Exercice sur les Fonctions en R
+
+### La commande `sample()`
 
 On va essayer d'estimer la taille moyenne de la population à partir d'un échantillon.
 
@@ -354,6 +364,8 @@ borne_inf<-moyenne_pop-largeur
 borne_sup <-moyenne_pop+largeur
 ```
 </details>
+
+### Les commandes `sample()` et `apply()`.
 
 3. A l'aide de la fonction `replicate()`, tirez 1000 échantillons de taille 100. Stockez dans un dataframe la moyenne et l'écart-type de chaque échantillon à l'aide de la fonction `apply()`.
 
@@ -455,6 +467,7 @@ View(resultat)
 ### Mémo
 | Nom de la commande | Description | Arguments Pertinents | Exemple |
 |-------------------|-------------|----------------------|---------|
+| `runif()` | Génère des échantillons aléatoires suivant une distribution uniforme. | `n` : nombre d'échantillons à générer. `min` : valeur minimale de la distribution. `max` : valeur maximale de la distribution. | `echantillon_unif <- runif(50, min = 0, max = 1)` |
 
 ### Exercice sur les Fonctions en R
 
