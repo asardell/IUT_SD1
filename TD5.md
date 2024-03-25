@@ -17,7 +17,7 @@ Dans cet exercice, nous allons effectuer plusieurs simulations de loi normale af
 ### Mémo
 | Nom de la commande | Description | Arguments Pertinents | Exemple |
 |-------------------|-------------|----------------------|---------|
-| `rnorm()` | Génère des échantillons aléatoires suivant une distribution normale \mathcal{N}(\mu, \sigma) . | `n` : nombre d'échantillons à générer. `mean` : moyenne de la distribution. `sd` : écart-type de la distribution. | `echantillon_norm <- rnorm(100, mean = 10, sd = 2)` |
+| `rnorm()` | Génère des échantillons aléatoires suivant une distribution normale *N(μ,σ)* . | `n` : nombre d'échantillons à générer. `mean` : moyenne de la distribution. `sd` : écart-type de la distribution. | `echantillon_norm <- rnorm(100, mean = 10, sd = 2)` |
 
 ### La commande `rnorm()`
 
@@ -36,10 +36,10 @@ plot(NA, xlim=c(-5, 5), ylim=c(0, 1), xlab="X",
 </details>
 
 2. Programmer une boucle `for` qui à chaque itération, ajoute une courbe densité issue d'une des 4 combinaisons de paramètres de loi normale suivant : 
-- \mathcal{N}(\mu=0, \sigma=0.45)
-- \mathcal{N}(\mu=0, \sigma=1)
-- \mathcal{N}(\mu=0, \sigma=2.25)
-- \mathcal{N}(\mu=-2, \sigma=0.7)
+- *N(μ=0, σ=0.45)*
+- *N(μ=0, σ=1)*
+- *N(μ=0, σ=2.25)*
+- *N(μ=-2, σ=0.7)*
 
 <details>
 <summary>Correction</summary>
@@ -63,7 +63,7 @@ legend("topright", legend=legend_labels, col=colors, lwd=2, cex=0.8)
 ```
 </details>
 
-3. Simuler une loi normale \mathcal{N}(\mu=0, \sigma=1) de taille 10 000.
+3. Simuler une loi normale *N(μ=0, σ=1)* de taille 10 000.
 
 <details>
 <summary>Correction</summary>
@@ -135,7 +135,7 @@ pnorm(q = 1.644854, mean = 0, sd = 1)
 ```
 </details>
 
-9. Quelle est la valeur théorique pour \[ P(X < x) = 0.975 \].
+9. Quelle est la valeur théorique pour *P(X < x) = 0.975*.
 
 <details>
 <summary>Correction</summary>
@@ -145,7 +145,7 @@ qnorm(p = 0.975, mean = 0, sd = 1)
 ```
 </details>
 
-10. Quelle est la valeur théorique pour \[ P(X >= 1.96) = p \].
+10. Quelle est la valeur théorique pour *P(X >= 1.96) = p*.
 
 <details>
 <summary>Correction</summary>
@@ -196,8 +196,8 @@ for (i in indices_lignes){
 indices_colones = seq(from = 0.00, to = 0.09, by = 0.01)
 indices_lignes = seq(from = 0, to = 3.9, by = 0.1)
 
-#On crée un vecteur vide.
-resultat = c()
+#On crée un objet résultat vide.
+resultat = NULL
 #On parcourt les indices colonnes
 for (j in indices_colones) {
   #on crée un vecteur vide pour ajouter les probas au fur et à mesure
@@ -210,7 +210,7 @@ for (j in indices_colones) {
     all_probas = c(all_probas,proba)
     all_probas = round(all_probas,digits = 4)
   }
-  #On ajoute une colonne au dataframe existant
+  #On ajoute une colonne au resultat
   resultat = cbind(resultat,all_probas)
 }
 ```
@@ -241,8 +241,7 @@ View(table)
 
 La taille moyenne des français est de 171cm avec un écart-type de 9 centimètres.
 
-1. Produire les tailles d'une population simulée de 10.000.000 de français répartis suivant une loi normale de moyenne 171 et d'écart-type 9. Stocker ces tailles dans un vecteur `population`.
-.
+1. Produire les tailles d'une population simulée de 10.000.000 de français répartis suivant une loi normale *N(171,9). Stocker ces tailles dans un vecteur `population`.
 
 <details>
 <summary>Correction</summary>
@@ -344,7 +343,7 @@ sd(echantillon)
 </details>
 
 
-2. A partir de l'écart-type estimé, calculez la largeur du demi-intervalle de confiance, puis les bornes inférieures et supérieures de l'intervalle de confiance (toujours à 95\%). Pour rappel, la formule est \[ \bar{x} \pm Z_{\frac{\alpha}{2}} \frac{\sigma}{\sqrt{n}} \]
+2. A partir de l'écart-type estimé, calculez la largeur du demi-intervalle de confiance, puis les bornes inférieures et supérieures de l'intervalle de confiance (toujours à 95\%). Pour rappel, la formule est disponible [ici](https://fr.wikipedia.org/wiki/Intervalle_de_confiance).
 
 <details>
 <summary>Correction</summary>
@@ -442,6 +441,8 @@ borne_sup_IC<-moyennes+largeur
 
 8. Construire un dataframe avec ces 3 vecteurs.
 
+<details>
+<summary>Correction</summary>
 ```r
 resultat = data.frame(largeur,borne_inf_IC,borne_sup_IC)
 View(resultat)
@@ -536,5 +537,6 @@ Voici quelques liens utiles :
 
 - [Comprendre la loi normale](https://major-prepa.com/mathematiques/comment-lire-table-loi-normale-centree-reduite/)
 - [Loi de probabilité avec R](https://fr.wikibooks.org/wiki/Programmer_en_R/Les_loi_de_probabilit%C3%A9s,_ajustement_et_test)
+- [Les intervalles de confiances](https://fr.wikipedia.org/wiki/Intervalle_de_confiance)
 - [Cours sur la programmation R - Chapitre Algorithmique](https://asardell.github.io/programmation-r/algo.html)
 
