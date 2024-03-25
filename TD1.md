@@ -614,8 +614,6 @@ quantile(echantillon, probs = 0.2)
 ```
 </details>
 
-
-
 #### Les fonctions `sample()`, `table()`, `prop.table()` , `unique()`, `sort()`
 
 1. Simuler un lancé de dé avec la fonction `sample()`.

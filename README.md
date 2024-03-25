@@ -24,7 +24,7 @@ Voici les objectifs de ce module :
 6. TP3 : EXAM
 7. TD4 : Création et personnalisation de graphique
 8. TP4 : Algorithmique
-9. TD5 : Lois Statistiques
+9. TD5 : Simulation de loi normale
 10. TP5 : Les jointures
 11. TD6 : Chercher l'erreur
 12. TP6 : EXAM 
