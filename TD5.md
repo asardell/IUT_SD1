@@ -343,7 +343,7 @@ sd(echantillon)
 </details>
 
 
-2. A partir de l'écart-type estimé, calculez la largeur du demi-intervalle de confiance, puis les bornes inférieures et supérieures de l'intervalle de confiance (toujours à 95\%). Pour rappel, la formule est disponible [ici](https://fr.wikipedia.org/wiki/Intervalle_de_confiance).
+2. A partir de l'écart-type estimé, calculez la largeur du demi-intervalle de confiance, puis les bornes inférieures et supérieures de l'intervalle de confiance (toujours à 95\%). Pour rappel, la formule est disponible [ici](https://fr.wikipedia.org/wiki/Intervalle_de_confiance#Intervalles_de_r%C3%A9f%C3%A9rence).
 
 <details>
 <summary>Correction</summary>
