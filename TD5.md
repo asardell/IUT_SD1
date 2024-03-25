@@ -177,6 +177,8 @@ Dans cet exercice, nous souhaitons reproduire dans un dataframe, la table de loi
 
 <img src="./img/table_loi_normale.png" alt="" style="height: 600px;">
 
+:bulb: Par exemple dans la table $P(X <= 1.96) = 0.975$ 
+
 1. A l'aide de boucle `for`. Construire une vecteur avec les probabilités de la première colonne de la table de loi normale. On souhaite une précision avec uniquement 4 décimales.
 
 <details>
@@ -455,6 +457,7 @@ borne_sup_IC<-moyennes+largeur
 
 <details>
 <summary>Correction</summary>
+     
 ```r
 resultat = data.frame(largeur,borne_inf_IC,borne_sup_IC)
 View(resultat)
