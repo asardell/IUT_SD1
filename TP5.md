@@ -64,8 +64,8 @@ fichiers <- list.files(path = getwd(),
 
 ```r
 library(tools)
-print(fichier[1])
-nom_fichier = basename(path = fichier[1])
+print(fichiers[1])
+nom_fichier = basename(path = fichiers[1])
 nom_fichier_sans_extension = file_path_sans_ext(x = nom_fichier)
 print(nom_fichier_sans_extension)
 ```
@@ -81,7 +81,7 @@ print(nom_fichier_sans_extension)
 ```r
 # Lire le fichier CSV et l'affecter à une variable avec le nom du fichier
 assign(x = nom_fichier_sans_extension, 
-       value = read.csv(fichier,
+       value = read.csv(fichiers[1],
                         sep = ",",
                         dec = "."))
 #un dataframe vient d'être créé avec comme nom d'objet le nom du fichier sans extension.
