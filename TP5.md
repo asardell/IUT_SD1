@@ -27,7 +27,7 @@ Dans cet exercice, nous allons effectuer plusieurs simulations de loi normale af
 
 ### Exercice sur les Fonctions en R
 
-### La commande `setwd()`
+#### La commande `setwd()`
 
 1. Placer tous les fichiers dans le même dossier nommée `nba` puis changer le répertoire courant par défaut de votre session RStudio avec la fonction `setwd()` pour pointer sur ce dossier.
 <details>
@@ -41,7 +41,7 @@ getwd()
 
 :warning: Il est possible de faire exactement la même chose avec le raccourci clavier `CTRL` + `SHIFT` + `H`.
 
-### La commande `list.files()`
+#### La commande `list.files()`
 
 2. Lister tous les fichiers du dossier `nba`.
 
@@ -55,7 +55,7 @@ fichiers <- list.files(path = getwd(),
 ```
 </details>
 
-### Les commandes `basename()` et `file_path_sans_ext()`
+#### Les commandes `basename()` et `file_path_sans_ext()`
 
 3. Tester la fonction `basename()` puis `file_path_sans_ext()` sur le premier fichier de la liste des fichiers afin de retrouver uniquement le nom du fichier sans l'extension `.csv`.
 
@@ -71,7 +71,7 @@ print(nom_fichier_sans_extension)
 ```
 </details>
 
-### La commande `assign()`
+#### La commande `assign()`
 
 4. Tester la fonction `assign()` pour importer le jeu de données avec la fonction `read.csv()`. Qu'est ce qu'on observe dans la fenêtre *Environment* ?
 
@@ -163,17 +163,7 @@ View(dfJoin)
 ```
 </details>
 
-
-1. Combien de matchs ont été joués par des équipes fondées après 2000.
-
-<details>
-<summary>Correction</summary>
-
-```r
-```
-</details>
-
-1. Combien d'arbitres différents ont officié durant la saison 2020.
+3. Combien d'arbitres différents ont officié durant la saison 2020.
 
 <details>
 <summary>Correction</summary>
@@ -189,7 +179,7 @@ View(dfJoin)
 ```
 </details>
 
-1. Combien de matchs à officié `Dick` `Bavetta` par saison ?
+4. Combien de matchs à officié `Dick` `Bavetta` par saison ?
 
 <details>
 <summary>Correction</summary>
