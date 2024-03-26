@@ -17,7 +17,7 @@ Dans cet exercice, nous allons effectuer plusieurs simulations de loi normale af
 ### Mémo
 | Nom de la commande | Description | Arguments Pertinents | Exemple |
 |-------------------|-------------|----------------------|---------|
-| `rnorm()` | Génère des échantillons aléatoires suivant une distribution normale *N(μ,σ)* . | `n` : nombre d'échantillons à générer. `mean` : moyenne de la distribution. `sd` : écart-type de la distribution. | `echantillon_norm <- rnorm(100, mean = 10, sd = 2)` |
+| `rnorm()` | Génère des échantillons aléatoires suivant une distribution normale $N(μ,σ)$ . | `n` : nombre d'échantillons à générer. `mean` : moyenne de la distribution. `sd` : écart-type de la distribution. | `echantillon_norm <- rnorm(100, mean = 10, sd = 2)` |
 | `qnorm()` | Calcule les quantiles de la distribution normale spécifiée. | `p` : probabilité pour laquelle trouver le quantile. `mean` : moyenne de la distribution. `sd` : écart-type de la distribution. | `quantile <- qnorm(0.975, mean = 0, sd = 1)` |
 | `pnorm()` | Calcule la fonction de distribution cumulative (CDF) pour la distribution normale spécifiée. | `q` : valeur pour laquelle calculer la probabilité. `mean` : moyenne de la distribution. `sd` : écart-type de la distribution. | `pnorm(q = 1.96, mean = 0, sd = 1)` |
 
@@ -40,10 +40,10 @@ plot(NA, xlim=c(-5, 5), ylim=c(0, 1), xlab="X",
 </details>
 
 2. Programmer une boucle `for` qui à chaque itération, ajoute une courbe densité issue d'une des 4 combinaisons de paramètres de loi normale suivant : 
-- *N(μ=0, σ=0.45)*
-- *N(μ=0, σ=1)*
-- *N(μ=0, σ=2.25)*
-- *N(μ=-2, σ=0.7)*
+- $N(μ=0, σ=0.45)$
+- $N(μ=0, σ=1)$
+- $N(μ=0, σ=2.25)$
+- $N(μ=-2, σ=0.7)$
 
 <details>
 <summary>Correction</summary>
@@ -67,7 +67,7 @@ legend("topright", legend=legend_labels, col=colors, lwd=2, cex=0.8)
 ```
 </details>
 
-3. Simuler une loi normale *N(μ=0, σ=1)* de taille 10 000.
+3. Simuler une loi normale $N(μ=0, σ=1)$ de taille 10 000.
 
 <details>
 <summary>Correction</summary>
@@ -247,7 +247,7 @@ View(table)
 
 La taille moyenne des français est de 171cm avec un écart-type de 9 centimètres.
 
-1. Produire les tailles d'une population simulée de 10.000.000 de français répartis suivant une loi normale *N(171,9). Stocker ces tailles dans un vecteur `population`.
+1. Produire les tailles d'une population simulée de 10.000.000 de français répartis suivant une loi normale $N(171,9)$. Stocker ces tailles dans un vecteur `population`.
 
 <details>
 <summary>Correction</summary>

@@ -25,7 +25,7 @@ Voici les objectifs de ce module :
 7. TD4 : Création et personnalisation de graphique
 8. TP4 : Algorithmique
 9. TD5 : Simulation de loi normale
-10. TP5 : Les jointures
+10. TP5 : Joitures et base de données
 11. TD6 : Chercher l'erreur
 12. TP6 : EXAM 
 
