@@ -235,7 +235,7 @@ Dans la suite des questions, nous allons manipuler la database avec des commande
 ```r
 library(DBI)
 library(RSQLite)
-mydb <- dbConnect(SQLite(), "nba.sqlite")
+mydb <- dbConnect(SQLite(), "nbaDb.sqlite")
 ```
 </details>
 
