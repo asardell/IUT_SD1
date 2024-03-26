@@ -53,7 +53,7 @@ getwd()
 
 ```r
 fichiers <- list.files(path = getwd(),
-                       pattern = "\\.csv$",
+                       pattern = ".csv$",
                        full.names = TRUE)
 ```
 </details>
