@@ -218,7 +218,7 @@ table(dfJoin$season)
 
 </details>
 
-2. Ouvrir SQLite Studio, puis cliquer sur *Base de données* puis *Ajouter une base de données* en sélectionnant le fichier `nba.sqlite` disponible sur GitHub. Vous avez ensuite accès à toutes vos tables dans SQLite Studio.
+2. Ouvrir SQLite Studio, puis cliquer sur *Base de données* puis *Ajouter une base de données* en sélectionnant le fichier `nbaDb.sqlite` disponible sur GitHub qu'il faudra déziper. Vous avez ensuite accès à toutes vos tables dans SQLite Studio.
 
 ### Connexion avec R
 
