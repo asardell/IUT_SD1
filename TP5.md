@@ -93,8 +93,6 @@ assign(x = nom_fichier_sans_extension,
 
 :bulb: Penser à rafraichîr la liste des objets de la fenêtre *Environment*.
 
-### La commande `Sys.time()`
-
 5. Utiliser ce même procéder dans une boucle `for` pour importer toutes la liste de fichiers.
 
 :warning: c'est une opération qui prendra plusieurs secondes car il y a des fichiers volumineux.
