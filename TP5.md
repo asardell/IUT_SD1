@@ -120,7 +120,7 @@ for (fichier in fichiers) {
 
 ## Exercice 2 : Les jointures
 
-<img src="./img/join.jpg" alt="" style="height: 200px;">
+<img src="./img/join.jpg" alt="" style="height: 300px;">
 
 ### Mémo
 | Nom de la commande | Description | Arguments Pertinents | Exemple |
@@ -212,20 +212,13 @@ table(dfJoin$season)
 1. Installer SQLite sur votre PC à l'aide de ce [tutoriel](https://www.sqlitetutorial.net/download-install-sqlite/). Il faut d'abord installer `SQLite tools` puis Install `SQLite GUI tool` dans un même dossier appelé `sqlite`.
 
 <details>
-<summary>Astuces</summary>
+<summary>Astuce</summary>
 
-<img src="./img/read.gif" alt="" style="height: 200px;">
+<img src="./img/read.gif" alt="" style="height: 300px;">
 
 </details>
 
 2. Ouvrir SQLite Studio, puis cliquer sur *Base de données* puis *Ajouter une base de données* en sélectionnant le fichier `nba.sqlite` disponible sur GitHub. Vous avez ensuite accès à toutes vos tables dans SQLite Studio.
-
-<details>
-<summary>Astuces</summary>
-
-<img src="./img/read.gif" alt="" style="height: 200px;">
-
-</details>
 
 ### Connexion avec R
 
@@ -297,7 +290,7 @@ dbDisconnect(mydb)
 <details>
 <summary>Vous avez terminé ?</summary>
 
-<img src="./img/congratulation.gif" alt="" style="height: 200px;">
+<img src="./img/congratulation.gif" alt="" style="height: 300px;">
 
 </details>
 
