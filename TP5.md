@@ -120,7 +120,7 @@ for (fichier in fichiers) {
 
 ## Exercice 2 : Les jointures
 
-<img src="./img/img1.jpg" alt="" style="height: 200px;">
+<img src="./img/join.jpg" alt="" style="height: 200px;">
 
 ### Mémo
 | Nom de la commande | Description | Arguments Pertinents | Exemple |
