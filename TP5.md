@@ -30,6 +30,9 @@ Dans cet exercice, nous allons effectuer plusieurs simulations de loi normale af
 #### La commande `setwd()`
 
 1. Placer tous les fichiers dans le même dossier nommée `nba` puis changer le répertoire courant par défaut de votre session RStudio avec la fonction `setwd()` pour pointer sur ce dossier.
+
+:warning: Les données sont aussi disponibles sur le réseau iut à cette adresse : *L:\BUT\SD\_Données\Promo 2023\Programmation Statistique sous R\GitHub\IUT_SD1*
+
 <details>
 <summary>Correction</summary>
 
