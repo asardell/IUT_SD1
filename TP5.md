@@ -299,6 +299,6 @@ dbDisconnect(mydb)
 
 Voici quelques liens utiles :
 
-- [Cours sur la programmation R - Chapitre Algorithmique](https://asardell.github.io/programmation-r/algo.html)
+- [Cours sur la programmation R - Chapitre Algorithmique](https://asardell.github.io/programmation-r/jointures.html#types-de-jointures)
 - [Installer SQLite](https://www.sqlitetutorial.net/download-install-sqlite/)
 - [R et SQLlite](https://cran.r-project.org/web/packages/RSQLite/vignettes/RSQLite.html)
