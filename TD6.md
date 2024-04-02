@@ -12,7 +12,7 @@ Le problème c'est que le script est bourré de fautes ! Rien ne fonctionne, à 
 Le fichier de données `NBA2014_2015.csv` est disponible dans le dossier `dataset`.
 <br>
 
-:target: Votre manager a déjà passé beaucoup de temps pour comprendre ce script et aimerait que votre correction garde la même philosophie que le script de votre collègue, cela signifie qu'il ne faut pas écrire d'autres commandes R et simplement faire en sorte que celles déjà présentes fonctionnent.
+Votre manager a déjà passé beaucoup de temps pour comprendre ce script et aimerait que votre correction garde la même philosophie que le script de votre collègue, cela signifie qu'il ne faut pas écrire d'autres commandes R et simplement faire en sorte que celles déjà présentes fonctionnent.
 
 
 :warning: L'ensemble des scripts à corriger sont à réaliser dans un seul script nommé `iut_sd1_r_td6`
