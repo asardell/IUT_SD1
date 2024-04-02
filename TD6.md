@@ -1,5 +1,7 @@
 # TD6
 
+<img src="./img/mistake.jpg" alt="" style="height: 400px;">
+
 ## Objectifs
 Voici les objectifs de ce chapitre :
 - [ ] Corriger des erreurs
