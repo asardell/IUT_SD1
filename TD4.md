@@ -171,7 +171,7 @@ abline(h = 100, col = "blue", lty = 2)
 ```r
 hist(x = df$capacity, 
      main = "Distribution de \n la capacité des stations",
-     col = "red"
+     col = "red",
      probability = TRUE,
      xlab = "Capacity")
 ```
