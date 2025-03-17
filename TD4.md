@@ -75,7 +75,7 @@ df$CodePostal = as.factor(df$CodePostal)
 
 ```r
 df$bornes = ifelse(df$capacity != (df$bikes + df$stands), "KO" , "OK")
-tables(df$bornes)
+table(df$bornes)
 #en réalité, c'est aussi peut-être car la station est fermée OU que des usagers ont déposé leur vélo pile au moment de l'extraction.
 ```
 </details>
