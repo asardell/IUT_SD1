@@ -273,6 +273,7 @@ boxplot(x = df$capacity,
 <summary>Correction</summary>
 
 ```r
+moy = mean(df$capacity, na.rm = TRUE)
 points(moy, col = "red", pch = 15, cex = 2)
 ```
 </details>
