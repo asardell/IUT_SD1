@@ -14,7 +14,7 @@ Dans ce TP, nous allons voir les jointures et des rappels de manipulation de dat
 
 ## Exercice 1 - Importer les données
 
-Dans cet exercice, nous allons effectuer plusieurs simulations de loi normale afin de comprendre ses paramètres et comment lire dans la table de la loi normale.
+Dans cet exercice, nous allons travailler sur les données disponibles dans le dossier *dataset/nba*.
 
 ### Mémo
 | Nom de la commande | Description | Arguments Pertinents | Exemple |
