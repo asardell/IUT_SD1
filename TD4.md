@@ -668,6 +668,8 @@ points(x = moy_stands,y = moy_capacity,
 
 ## Exercice 6 - Cartographie (spoil sur le SD2)
 
+Plus d'info sur la personnalisation de la carte [ici](https://rstudio.github.io/leaflet/articles/markers.html).
+
 1. Executer le code suivant pour créer une carte à partir des colonnes `position_longitude` et `position_latitude`.
 
 <details>
@@ -680,14 +682,14 @@ library(dplyr)
 library(ggplot2)
 
 # Créer une carte Leaflet
-maCarte <- leaflet(df) %>% 
-  addTiles() %>% 
-  addMarkers(~position_longitude, 
-             ~position_latitude, 
-             popup = ~address)
-
-# Afficher la carte
-maCarte
+leaflet(df) %>% 
+addTiles() %>% 
+addMarkers(
+        ~position_longitude,
+        ~position_latitude, 
+        popup = ~address,
+        clusterOptions = markerClusterOptions()
+)
 ```
 </details>
 
